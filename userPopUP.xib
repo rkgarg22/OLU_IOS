@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3n-W9-YcT">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0G-MI-SJ8">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popUpBack" translatesAutoresizingMaskIntoConstraints="NO" id="ojr-SN-2if">
+                            <rect key="frame" x="10" y="9" width="300" height="382"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="aCI-YQ-4N7"/>
+                                <constraint firstAttribute="width" secondItem="ojr-SN-2if" secondAttribute="height" multiplier="1135:1442" id="crr-m1-3hE"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DY2-Gu-YHA" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
+                            <rect key="frame" x="160.5" y="159" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtn-ex-feX" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
+                            <rect key="frame" x="30" y="179" width="260" height="0.0"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuU-XT-m4J">
+                            <rect key="frame" x="100" y="209" width="120" height="36.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="kGL-qd-Jyc"/>
+                                <constraint firstAttribute="width" secondItem="yuU-XT-m4J" secondAttribute="height" multiplier="174:53" id="xU8-AW-7Zi"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="ok"/>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYA-U3-3wa">
+                            <rect key="frame" x="100" y="212" width="120" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ojr-SN-2if" firstAttribute="centerY" secondItem="U3n-W9-YcT" secondAttribute="centerY" id="9bn-LQ-ITx"/>
+                        <constraint firstItem="yuU-XT-m4J" firstAttribute="centerX" secondItem="U3n-W9-YcT" secondAttribute="centerX" id="Mor-eV-2sd"/>
+                        <constraint firstItem="CYA-U3-3wa" firstAttribute="leading" secondItem="yuU-XT-m4J" secondAttribute="leading" id="OC4-Ld-rkw"/>
+                        <constraint firstItem="vtn-ex-feX" firstAttribute="top" secondItem="DY2-Gu-YHA" secondAttribute="bottom" constant="20" id="P5i-Ta-QhA"/>
+                        <constraint firstItem="CYA-U3-3wa" firstAttribute="trailing" secondItem="yuU-XT-m4J" secondAttribute="trailing" id="UlG-F6-Ihv"/>
+                        <constraint firstItem="H0G-MI-SJ8" firstAttribute="top" secondItem="U3n-W9-YcT" secondAttribute="top" id="W1b-tf-vpL"/>
+                        <constraint firstItem="DY2-Gu-YHA" firstAttribute="centerX" secondItem="U3n-W9-YcT" secondAttribute="centerX" id="WjY-Rz-Fbb"/>
+                        <constraint firstItem="ojr-SN-2if" firstAttribute="top" secondItem="DY2-Gu-YHA" secondAttribute="bottom" constant="-150" id="eJ8-vT-fim"/>
+                        <constraint firstAttribute="trailing" secondItem="H0G-MI-SJ8" secondAttribute="trailing" id="fZN-e2-iCX"/>
+                        <constraint firstItem="H0G-MI-SJ8" firstAttribute="leading" secondItem="U3n-W9-YcT" secondAttribute="leading" id="fum-C2-yNl"/>
+                        <constraint firstItem="ojr-SN-2if" firstAttribute="centerX" secondItem="U3n-W9-YcT" secondAttribute="centerX" id="gl5-V6-ebw"/>
+                        <constraint firstItem="vtn-ex-feX" firstAttribute="centerX" secondItem="U3n-W9-YcT" secondAttribute="centerX" id="hLB-uR-NEI"/>
+                        <constraint firstItem="CYA-U3-3wa" firstAttribute="centerY" secondItem="yuU-XT-m4J" secondAttribute="centerY" id="k5Z-yw-Wji"/>
+                        <constraint firstItem="vtn-ex-feX" firstAttribute="width" secondItem="ojr-SN-2if" secondAttribute="width" constant="-40" id="sFm-Ti-PoA"/>
+                        <constraint firstAttribute="bottom" secondItem="H0G-MI-SJ8" secondAttribute="bottom" id="tSK-O0-TrQ"/>
+                        <constraint firstItem="yuU-XT-m4J" firstAttribute="top" secondItem="vtn-ex-feX" secondAttribute="bottom" constant="30" id="yhn-ew-az7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="U3n-W9-YcT" secondAttribute="bottom" id="HzX-B3-4z7"/>
+                <constraint firstItem="U3n-W9-YcT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="JYn-Rf-zDj"/>
+                <constraint firstItem="U3n-W9-YcT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KsL-IQ-cmV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="U3n-W9-YcT" secondAttribute="trailing" id="nz6-eL-6Bz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-30" y="151"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ok" width="174" height="53"/>
+        <image name="popUpBack" width="1135" height="1442"/>
+    </resources>
+</document>

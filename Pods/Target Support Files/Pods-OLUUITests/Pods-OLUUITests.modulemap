@@ -1,0 +1,6 @@
+framework module Pods_OLUUITests {
+  umbrella header "Pods-OLUUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

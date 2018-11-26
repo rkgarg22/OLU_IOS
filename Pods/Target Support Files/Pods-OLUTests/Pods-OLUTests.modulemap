@@ -1,0 +1,6 @@
+framework module Pods_OLUTests {
+  umbrella header "Pods-OLUTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
