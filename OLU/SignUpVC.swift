@@ -204,12 +204,12 @@ class SignUpVC: UIViewController ,UITextFieldDelegate  ,RegistrationServiceAlamo
         if(((firstNameText.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
             showAlert(self, message: enterFirstName, title: appName)
         }
-        else if !(checkSpecialletter(stringValue: firstNameText.text!)) {
+        else if !(checkSpecialletter(stringValue: firstNameText.text!.trimmingCharacters(in: .whitespaces))) {
             showAlert(self, message: thereSpecialCharterThere, title: appName)
         }
         else if(((lastNameText.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
             showAlert(self, message: enterlastName, title: appName)
-        } else if !(checkSpecialletter(stringValue: lastNameText.text!)) {
+        } else if !(checkSpecialletter(stringValue: lastNameText.text!.trimmingCharacters(in: .whitespaces))) {
             showAlert(self, message: thereSpecialCharterThere, title: appName)
         }
         else if

@@ -146,7 +146,7 @@ let trainerRegistrationVerifyMessage = "Muchas gracias por registrarte como espe
 
 let switchSelectedCardConfirmation = "La tarjeta de crédito seleccionada quedará como tu medio de pago principal."
 
-let thereSpecialCharterThere = "Quitar el caracter especial"
+let thereSpecialCharterThere = "Por favor verifica que tu nombre o apellido NO contengan caracteres especiales. Gracias"
 
 
 //MARK: - Show alert

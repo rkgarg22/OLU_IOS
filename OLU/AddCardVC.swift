@@ -18,11 +18,12 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
     var selectedIndex = Int()
     var webView: WKWebView!
     var promoCode = String()
+    var isDeletingSelectedOne = Bool()
     var nibContentsUser = Bundle.main.loadNibNamed("promoCodePopUp", owner: self, options: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
         cardTableView.separatorStyle = .none
-        
+        isDeletingSelectedOne = false
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.uiDelegate = self
@@ -121,6 +122,14 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
         applicationDelegate.dismissProgressView(view: self.view)
         let success = dictionaryContent.value(forKey: "success") as AnyObject
         if success .isEqual(1) {
+            let dict = cardArray[selectedIndex] as! NSDictionary
+            let defaultCard = dict.value(forKey: "defaultCard") as AnyObject
+            if defaultCard .isEqual(1){
+                isDeletingSelectedOne = true
+            }else{
+                isDeletingSelectedOne = false
+            }
+            
             showCardDeletePopUp()
             getCardList()
         }
@@ -233,10 +242,10 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
         cell.cardLabel.text = "XXXX XXXX XXXX " + cardNumber
         let success = dict.value(forKey: "defaultCard") as AnyObject
         if success .isEqual(1) {
-            let image = UIImage(named: "selectedTicK")
+            let image = UIImage(named: "checked")
             cell.selectedImageView.image = image
         }else{
-            let image = UIImage(named: "Unselectedtick")
+            let image = UIImage(named: "unchecked")
             cell.selectedImageView.image = image
         }
         
@@ -246,9 +255,9 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         let dict = cardArray[indexPath.row] as! NSDictionary
-        let success = dict.value(forKey: "defaultCard") as AnyObject
+        let defaultCard = dict.value(forKey: "defaultCard") as AnyObject
         let requestID = dict.value(forKey: "requestId") as! String
-        if success .isEqual(1){
+        if defaultCard .isEqual(1){
         }else{
             switchSelectedCardPopup(requestID: requestID);
         }
@@ -322,7 +331,7 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
         // Create the actions
         let YesAction = UIAlertAction(title:"Si", style: UIAlertActionStyle.default) {
             UIAlertAction in
-            
+            self.callMarkSelectCardAPI(requestID: requestID)
         }
         let NoAction = UIAlertAction(title: "No", style: UIAlertActionStyle.default) {
             UIAlertAction in
@@ -359,6 +368,23 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
                     cardTableView.reloadData()
                 }
             }
+            
+            if(isDeletingSelectedOne && cardArray.count>0){
+                let dict = cardArray[0] as! NSDictionary
+                let requestID = dict.value(forKey: "requestId") as! String
+                callMarkSelectCardAPI(requestID: requestID)
+                isDeletingSelectedOne = false
+            }else if(cardArray.count==1){
+                let dict = cardArray[0] as! NSDictionary
+                let defaultCard = dict.value(forKey: "defaultCard") as AnyObject
+                if defaultCard .isEqual(0) {
+                    let requestID = dict.value(forKey: "requestId") as! String
+                    callMarkSelectCardAPI(requestID: requestID)
+                    isDeletingSelectedOne = false
+                }
+            }else{
+                isDeletingSelectedOne = false
+            }
         }
         else {
             cardArray = NSArray()
@@ -367,7 +393,6 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
             showAlert(self, message: error, title: appName)
         }
     }
-    
     
     
     func callMarkSelectCardAPI(requestID:String){
