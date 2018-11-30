@@ -41,11 +41,12 @@ class RealizadasCell: UITableViewCell {
     
     func resultDictForPayment(resultDict:NSDictionary) {
         let endTime = resultDict.value(forKey: "bookingEnd") as! String
-        let amount = resultDict.value(forKey: "amount") as! String
-    
-        let amountInDocuble = Double(amount)
-        let final = String(format: "%.3f", amountInDocuble!)
-        timeLabel.text = "$" + final + "\n" + getTimeInFormat(time: endTime)
+        var amount = Double(resultDict.value(forKey: "amount") as! String)
+        amount = amount! * 1000
+        let priceConv = getConvertedPriceString(myDouble:amount!)
+        let newString = priceConv.replacingOccurrences(of: "$", with: "", options: .literal, range: nil)
+        
+        timeLabel.text = "$" + newString + "\n" + getTimeInFormat(time: endTime)
         catName.text = resultDict.value(forKey: "category") as? String
         dateLabel.text = resultDict.value(forKey: "date") as? String
         let firsrtName = resultDict.value(forKey: "firstName") as! String

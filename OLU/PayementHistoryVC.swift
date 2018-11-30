@@ -76,10 +76,11 @@ class PayementHistoryVC: UIViewController,UITableViewDelegate ,UITableViewDataSo
             let amountInDocuble = Double(amount)
             totalPrice = totalPrice + amountInDocuble!;
         }
-        
-        //let priceConv = getConvertedPriceString(myDouble:totalPrice)
-        let final = String(format: "%.3f", totalPrice)
-        totalPriceLabel.text = final
+        totalPrice = totalPrice * 1000
+        let priceConv = getConvertedPriceString(myDouble:totalPrice)
+        let newString = priceConv.replacingOccurrences(of: "$", with: "", options: .literal, range: nil)
+       //let final = String(format: "%.3f", totalPrice)
+        totalPriceLabel.text = newString
     }
     
     func paymentHistoryResults(dictionaryContent: NSDictionary) {

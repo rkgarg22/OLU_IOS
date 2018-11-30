@@ -496,9 +496,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,confirmBookingAlamofire {
         content.categoryIdentifier = bookingIdString
         
         let tomorrow = Calendar.current.date(byAdding: .minute, value: -30, to: firstConvertedDate!)
-        var components = userCalendar.dateComponents([.year,.month,.day,.hour, .minute], from: tomorrow!)
-        //components.hour = components.hour
-        //components.minute = components.minute
+        let components = userCalendar.dateComponents([.year,.month,.day,.hour, .minute], from: tomorrow!)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         let request = UNNotificationRequest(identifier: bookingIdString, content: content, trigger: trigger)
@@ -536,6 +534,9 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
         userInfoDict = userInfo as NSDictionary
+        if(userInfoDict["isLocalNotification"] != nil){
+            
+        }else{
         if userInfoDict["bookingType"] != nil {
             setNotificaitonPopUp()
         }else{
@@ -545,6 +546,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             if(!applicationDelegate.isOnChatScreen){
                 completionHandler([.alert])
             }
+        }
         }
         // Change this to your preferred presentation option
         
@@ -624,9 +626,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     
     
     func in15Min()-> Bool{
-        
         let bookingCreated = userInfoDict.value(forKey: "bookingCreated") as! String
-        
         let currenDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss" //Your date format
@@ -645,8 +645,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             return false
         }
     }
-    
-    
 }
 
 extension AppDelegate : MessagingDelegate {
