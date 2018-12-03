@@ -251,7 +251,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,confirmBookingAlamofire {
             let crossBtn = (nibMainview.viewWithTag(15)! as! UIButton)
             let groupName = (nibMainview.viewWithTag(84)! as! UILabel)
             let groupImage = (nibMainview.viewWithTag(82)! as! UIImageView)
-             let countlabel = (nibMainview.viewWithTag(83)! as! UILabel)
+            let countlabel = (nibMainview.viewWithTag(83)! as! UILabel)
             
             
             switch  bookingFor {
@@ -424,7 +424,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,confirmBookingAlamofire {
             myVC.nameString = nameString
             (self.window?.rootViewController as! UINavigationController).pushViewController(myVC, animated: true)
         }else if(bookingType == "7"){
-             bookingIdString = userInfoDict.value(forKey: "bookingID") as! String
+            bookingIdString = userInfoDict.value(forKey: "bookingID") as! String
             removeNotification(bookingIdString: bookingIdString)
         }
     }
@@ -535,18 +535,18 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let userInfo = notification.request.content.userInfo
         userInfoDict = userInfo as NSDictionary
         if(userInfoDict["isLocalNotification"] != nil){
-            
+             completionHandler([.alert])
         }else{
-        if userInfoDict["bookingType"] != nil {
-            setNotificaitonPopUp()
-        }else{
-            let makeChatDict: NSDictionary = ["messageToID": Int(userInfoDict.value(forKey: "toUserID") as! String)!, "message": userInfoDict.value(forKey: "message") as! String ,"messageTime" : userInfoDict.value(forKey: "messageTime") as! NSString]
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTheTable"), object: nil, userInfo: makeChatDict as? [AnyHashable : Any])
-            
-            if(!applicationDelegate.isOnChatScreen){
-                completionHandler([.alert])
+            if userInfoDict["bookingType"] != nil {
+                setNotificaitonPopUp()
+            }else{
+                let makeChatDict: NSDictionary = ["messageToID": Int(userInfoDict.value(forKey: "toUserID") as! String)!, "message": userInfoDict.value(forKey: "message") as! String ,"messageTime" : userInfoDict.value(forKey: "messageTime") as! NSString]
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTheTable"), object: nil, userInfo: makeChatDict as? [AnyHashable : Any])
+                
+                if(!applicationDelegate.isOnChatScreen){
+                    completionHandler([.alert])
+                }
             }
-        }
         }
         // Change this to your preferred presentation option
         
@@ -571,8 +571,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                 myVC.userName = firsrtName + " " + lastName
                 (self.window?.rootViewController as! UINavigationController).pushViewController(myVC, animated: true)
             }
-            completionHandler()
         }
+        completionHandler()
     }
     
     func isAfter2hour()-> Bool{
