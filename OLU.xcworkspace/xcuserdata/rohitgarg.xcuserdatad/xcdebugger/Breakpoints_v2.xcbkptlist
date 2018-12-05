@@ -41,22 +41,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OLU/AddCardVC.swift"
-            timestampString = "564981819.2520469"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
-            landmarkName = "getCardListData(dictionaryContent:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
             timestampString = "565297529.323416"
             startingColumnNumber = "9223372036854775807"
@@ -154,7 +138,7 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "565501756.18055"
+                  timestampString = "565716724.010308"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "572"
@@ -169,7 +153,7 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "565501756.1828901"
+                  timestampString = "565716724.012578"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "572"
@@ -298,7 +282,7 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AlamofireWrapper.swift"
-                  timestampString = "565501756.21711"
+                  timestampString = "565716724.046007"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "441"
@@ -313,7 +297,7 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AlamofireWrapper.swift"
-                  timestampString = "565501756.219385"
+                  timestampString = "565716724.048339"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "444"
@@ -385,6 +369,22 @@
             endingLineNumber = "515"
             landmarkName = "requestAuthorization(completionHandler:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OLU/UserPayemntCell.swift"
+            timestampString = "565716847.069508"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

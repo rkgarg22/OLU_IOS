@@ -15,6 +15,7 @@ class UserPayemntCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabelCustomClass!
     @IBOutlet weak var priceLabel: UILabelCustomClass!
     @IBOutlet weak var referenceLabel: UILabelCustomClass!
+    @IBOutlet weak var statusLabel: UILabelCustomClass!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,6 +34,15 @@ class UserPayemntCell: UITableViewCell {
         nameLabel.text = resultDict.value(forKey: "categoryName") as? String
         timeLabel.text = convertTime(timeString: (resultDict.value(forKey: "time") as? String)!)
         referenceLabel.text = resultDict.value(forKey: "reference") as? String
+        
+        let paymentStatus = resultDict.value(forKey: "paymentStatus") as AnyObject
+        if paymentStatus .isEqual(1) {
+            statusLabel.text = "APROBADO"
+        }else if paymentStatus.isEqual(0){
+            statusLabel.text = "RECHAZADO"
+        }else{
+            statusLabel.text = "PENDIENTE"
+        }
     }
     
     func convertTime(timeString:String) -> String{

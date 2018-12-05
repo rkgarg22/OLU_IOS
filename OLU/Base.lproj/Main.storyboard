@@ -10534,6 +10534,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNZ-gh-2GZ" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="50.333333333333336" width="48" height="24.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APROBADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0N2-cU-97v" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="78" width="81.333333333333329" height="24.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icd-E9-YUh" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
                                                     <rect key="frame" x="100" y="32.666666666666664" width="30" height="2"/>
                                                     <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -10579,6 +10591,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="a7F-MT-HYS" secondAttribute="bottom" constant="5" id="5R5-B3-tz9"/>
                                                 <constraint firstItem="HpK-qz-h3I" firstAttribute="leading" secondItem="7bE-pD-EDH" secondAttribute="leading" id="940-1v-Lr2"/>
                                                 <constraint firstItem="7bE-pD-EDH" firstAttribute="top" secondItem="b6r-nX-m2z" secondAttribute="top" id="Cq3-kK-lFO"/>
+                                                <constraint firstItem="0N2-cU-97v" firstAttribute="top" secondItem="LNZ-gh-2GZ" secondAttribute="bottom" constant="3" id="Hfd-ja-Q7L"/>
                                                 <constraint firstItem="icd-E9-YUh" firstAttribute="centerY" secondItem="b6r-nX-m2z" secondAttribute="centerY" id="VDF-77-ILo"/>
                                                 <constraint firstItem="Y2B-Pl-OtC" firstAttribute="top" secondItem="HpK-qz-h3I" secondAttribute="bottom" constant="5" id="ZjD-gX-KKU"/>
                                                 <constraint firstItem="a7F-MT-HYS" firstAttribute="top" secondItem="Kq6-JB-wDD" secondAttribute="bottom" constant="8.6666666666666572" id="bV5-W2-Z6J"/>
@@ -10586,8 +10599,11 @@
                                                 <constraint firstItem="a7F-MT-HYS" firstAttribute="leading" secondItem="MU4-o0-WfS" secondAttribute="leading" id="f7u-9J-QBb"/>
                                                 <constraint firstItem="b6r-nX-m2z" firstAttribute="top" secondItem="MU4-o0-WfS" secondAttribute="top" constant="20" id="hub-gs-gee"/>
                                                 <constraint firstAttribute="trailing" secondItem="a7F-MT-HYS" secondAttribute="trailing" id="lKX-PJ-06H"/>
+                                                <constraint firstItem="LNZ-gh-2GZ" firstAttribute="leading" secondItem="b6r-nX-m2z" secondAttribute="leading" id="mVy-vd-pAy"/>
                                                 <constraint firstItem="7bE-pD-EDH" firstAttribute="leading" secondItem="icd-E9-YUh" secondAttribute="trailing" constant="25" id="nef-vK-0v2"/>
                                                 <constraint firstItem="b6r-nX-m2z" firstAttribute="leading" secondItem="MU4-o0-WfS" secondAttribute="leading" constant="15" id="oby-j4-wRu"/>
+                                                <constraint firstItem="LNZ-gh-2GZ" firstAttribute="top" secondItem="b6r-nX-m2z" secondAttribute="bottom" constant="3" id="pDk-bW-JiQ"/>
+                                                <constraint firstItem="0N2-cU-97v" firstAttribute="leading" secondItem="b6r-nX-m2z" secondAttribute="leading" id="rAW-42-th0"/>
                                                 <constraint firstItem="icd-E9-YUh" firstAttribute="leading" secondItem="b6r-nX-m2z" secondAttribute="trailing" constant="10" id="vKk-bh-RfS"/>
                                                 <constraint firstItem="Kq6-JB-wDD" firstAttribute="top" secondItem="Y2B-Pl-OtC" secondAttribute="bottom" constant="5" id="vbn-d8-8fK"/>
                                             </constraints>
@@ -10597,6 +10613,7 @@
                                             <outlet property="nameLabel" destination="7bE-pD-EDH" id="9se-iB-32j"/>
                                             <outlet property="priceLabel" destination="HpK-qz-h3I" id="NFJ-KN-r1O"/>
                                             <outlet property="referenceLabel" destination="Kq6-JB-wDD" id="VBw-Zc-iF5"/>
+                                            <outlet property="statusLabel" destination="0N2-cU-97v" id="9lo-VT-xzx"/>
                                             <outlet property="timeLabel" destination="Y2B-Pl-OtC" id="R5M-qL-VZA"/>
                                         </connections>
                                     </tableViewCell>
