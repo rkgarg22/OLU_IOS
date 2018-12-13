@@ -6325,16 +6325,16 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLJ-R8-tPI" userLabel="logoView">
-                                <rect key="frame" x="157" y="28" width="100.33333333333331" height="37"/>
+                                <rect key="frame" x="109.33333333333331" y="28" width="196" height="37"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3D-OH-YyQ" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
-                                        <rect key="frame" x="48" y="0.0" width="52.333333333333343" height="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OLU TEAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3D-OH-YyQ" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
+                                        <rect key="frame" x="100" y="0.0" width="96" height="37"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="27"/>
                                         <color key="textColor" red="0.27469128370000001" green="0.34768235679999998" blue="0.40961524840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OLU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5x-0r-gxl" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="43" height="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INGRESO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5x-0r-gxl" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="37"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="27"/>
                                         <color key="textColor" red="0.26245722170000002" green="0.32810509199999999" blue="0.38993263239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
