@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/categoriesVC.swift"
-            timestampString = "564952162.7147599"
+            timestampString = "566418730.458055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "carousel(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/categoriesVC.swift"
-            timestampString = "564952162.716239"
+            timestampString = "566418730.4673949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "carousel(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.323416"
+            timestampString = "566418730.467947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "confirmOrderApiHit(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.337274"
+            timestampString = "566418730.522493"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "532"
-            endingLineNumber = "532"
+            startingLineNumber = "537"
+            endingLineNumber = "537"
             landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.337588"
+            timestampString = "566418730.525032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "512"
-            endingLineNumber = "512"
+            startingLineNumber = "517"
+            endingLineNumber = "517"
             landmarkName = "requestAuthorization(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.33785"
+            timestampString = "566418730.5268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "applicationDidEnterBackground(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.338166"
+            timestampString = "566418730.52935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "572"
-            endingLineNumber = "572"
+            startingLineNumber = "577"
+            endingLineNumber = "577"
             landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
             <Locations>
@@ -138,11 +138,11 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "566405730.206218"
+                  timestampString = "566418344.3406219"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "572"
-                  endingLineNumber = "572"
+                  startingLineNumber = "577"
+                  endingLineNumber = "577"
                   offsetFromSymbolStart = "4705">
                </Location>
                <Location
@@ -153,11 +153,11 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "566405730.209291"
+                  timestampString = "566418344.34654"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "572"
-                  endingLineNumber = "572"
+                  startingLineNumber = "577"
+                  endingLineNumber = "577"
                   offsetFromSymbolStart = "5502">
                </Location>
             </Locations>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.338418"
+            timestampString = "566418730.530923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "549"
-            endingLineNumber = "549"
+            startingLineNumber = "554"
+            endingLineNumber = "554"
             landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.338663"
+            timestampString = "566418730.5334671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "applicationWillEnterForeground(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.338946"
+            timestampString = "566418730.535115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "showRequestView(dict:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,7 +282,7 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AlamofireWrapper.swift"
-                  timestampString = "566405730.2697361"
+                  timestampString = "566418344.449831"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "441"
@@ -297,7 +297,7 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AlamofireWrapper.swift"
-                  timestampString = "566405730.274074"
+                  timestampString = "566418344.45816"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "444"
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.339285"
+            timestampString = "566418730.537338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
             landmarkName = "scheduleLocalNotificationForSession(sessionDict:bookingID:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AppDelegate.swift"
-            timestampString = "565297529.339606"
+            timestampString = "566418730.5402679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "515"
-            endingLineNumber = "515"
+            startingLineNumber = "520"
+            endingLineNumber = "520"
             landmarkName = "requestAuthorization(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -416,6 +416,22 @@
             startingLineNumber = "111"
             endingLineNumber = "111"
             landmarkName = "getlist(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OLU/AppDelegate.swift"
+            timestampString = "566418730.542002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "googleAnalytics(messgae:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

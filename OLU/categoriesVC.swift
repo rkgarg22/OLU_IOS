@@ -102,6 +102,9 @@ class categoriesVC: UIViewController ,UITableViewDataSource ,UITableViewDelegate
         default:
             print("Default Case")
         }
+        let titleArr =  menuDict.value(forKey: "nameArray") as! NSArray
+        let message = titleArr[indexValue] as? String
+        applicationDelegate.googleAnalytics(messgae: message!)
         let myVC = storyboard?.instantiateViewController(withIdentifier: "SelectCalendarVc") as! SelectCalendarVC
         myVC.catId = catId
         navigationController?.pushViewController(myVC, animated: true)

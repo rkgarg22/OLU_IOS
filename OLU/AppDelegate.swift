@@ -73,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,confirmBookingAlamofire {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FirebaseApp.configure()
         Messaging.messaging().delegate = self as MessagingDelegate
+        
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self as UNUserNotificationCenterDelegate
@@ -88,6 +89,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,confirmBookingAlamofire {
         }
         application.registerForRemoteNotifications()
         return true
+    }
+    
+    func googleAnalytics(messgae: String){
+        Analytics.logEvent ( messgae , parameters : nil)
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
