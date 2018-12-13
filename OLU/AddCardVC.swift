@@ -43,7 +43,7 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
             webView.removeFromSuperview()
             getPaymentCollectAPI()
         }
-        else if (text?.contains("https://test.placetopay.com/redirection/cancel/"))! {
+        else if (text?.contains("redirection/cancel/"))! {
             webView.removeFromSuperview()
         }
         

@@ -108,7 +108,7 @@ class AllTrainerListVC: UIViewController ,UITableViewDataSource ,UITableViewDele
         let dict = notification.object as! NSDictionary
         let genderString = dict.value(forKey: "gender") as! String
         listingDict["catId"] = dict.value(forKey: "cat") as! Int
-        getListingApi(genderString : genderString ,lat:"" ,long:"")
+        getListingApi(genderString : genderString ,lat:lat ,long:long)
     }
     
     @IBAction func directionFilter(_ sender: Any) {

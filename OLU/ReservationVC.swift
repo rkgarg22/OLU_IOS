@@ -63,7 +63,7 @@ class ReservationVC: UIViewController ,bookingAlamoFire ,paymentInitiateAlamofir
             webView.removeFromSuperview()
             callMarkSelectCardAPI(requestID: requestID)
         }
-        else if (text?.contains("https://test.placetopay.com/redirection/cancel/"))! {
+        else if (text?.contains("redirection/cancel/"))! {
             webView.removeFromSuperview()
         }
     }
