@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AlamofireWrapper.swift"
-            timestampString = "565289771.4615819"
+            timestampString = "566494224.80896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "836"
@@ -138,12 +138,12 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "566418344.3406219"
+                  timestampString = "566494225.137125"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "577"
                   endingLineNumber = "577"
-                  offsetFromSymbolStart = "4705">
+                  offsetFromSymbolStart = "3528">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -153,12 +153,12 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "566418344.34654"
+                  timestampString = "566494225.13985"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "577"
                   endingLineNumber = "577"
-                  offsetFromSymbolStart = "5502">
+                  offsetFromSymbolStart = "4104">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -233,86 +233,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OLU/AllTrainerListVC.swift"
-            timestampString = "566406236.612955"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "getListingApi(genderString:lat:long:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OLU/AlamofireWrapper.swift"
-            timestampString = "565289771.464775"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "439"
-            endingLineNumber = "439"
-            landmarkName = "listing(searchText:category:date:time:language:gender:rating:latitude:longitude:selectGroup:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OLU/AlamofireWrapper.swift"
-            timestampString = "565289771.465461"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "441"
-            endingLineNumber = "441"
-            landmarkName = "listing(searchText:category:date:time:language:gender:rating:latitude:longitude:selectGroup:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OLU.AlamofireWrapper.listing(searchText: Swift.String, category: Swift.Int, date: Swift.String, time: Swift.String, language: Swift.String, gender: Swift.String, rating: Swift.Double, latitude: Swift.String, longitude: Swift.String, selectGroup: Swift.String) -&gt; ()"
-                  moduleName = "OLU"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AlamofireWrapper.swift"
-                  timestampString = "566418344.449831"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "441"
-                  endingLineNumber = "441"
-                  offsetFromSymbolStart = "3556">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in OLU.AlamofireWrapper.listing(searchText: Swift.String, category: Swift.Int, date: Swift.String, time: Swift.String, language: Swift.String, gender: Swift.String, rating: Swift.Double, latitude: Swift.String, longitude: Swift.String, selectGroup: Swift.String) -&gt; ()"
-                  moduleName = "OLU"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AlamofireWrapper.swift"
-                  timestampString = "566418344.45816"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "444"
-                  endingLineNumber = "444"
-                  offsetFromSymbolStart = "26">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "OLU/LocationVC.swift"
             timestampString = "565289903.488891"
             startingColumnNumber = "9223372036854775807"
@@ -346,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OLU/AlamofireWrapper.swift"
-            timestampString = "565296277.239778"
+            timestampString = "566494224.826296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "710"
@@ -425,13 +345,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OLU/AppDelegate.swift"
-            timestampString = "566418730.542002"
+            filePath = "OLU/ReservationVC.swift"
+            timestampString = "566493475.4053119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "googleAnalytics(messgae:)"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
+            landmarkName = "hitBookingApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

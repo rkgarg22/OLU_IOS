@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>11</string>
+	<string>12</string>
 	<key>FacebookAppID</key>
 	<string>389018104911551</string>
 	<key>FacebookDisplayName</key>
@@ -57,15 +57,15 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>App wants to access camera</string>
+	<string>Camera access requird to set the profile image.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Si</string>
+	<string>Location required to see trainer near to you.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Si</string>
+	<string>Location required to see trainer near to you.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Si</string>
+	<string>Location required to see trainer near to you.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>App wants to access Photo library</string>
+	<string>Photo Library access required to set the profile pic from gallery.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
