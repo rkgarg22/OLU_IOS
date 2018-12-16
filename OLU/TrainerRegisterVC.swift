@@ -233,7 +233,7 @@ class TrainerRegisterVC:UIViewController ,UITextFieldDelegate  ,SignUpServiceAla
             showAlert(self, message:enterDateOfBirth , title: appName)
         }
         else if
-            
+
             (((genderText.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
             showAlert(self, message:enterGender , title: appName)
         }

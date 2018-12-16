@@ -70,15 +70,15 @@ class EditProfileVC: UIViewController ,UITextFieldDelegate ,editProfileAlamofire
         else if(((lastNameText.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
             showAlert(self, message: enterlastName, title: appName)
         }
-        else if
-            (((dateOfBirth.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
-            showAlert(self, message:enterDateOfBirth , title: appName)
-        }
-        else if
-            
-            (((genderText.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
-            showAlert(self, message:enterGender , title: appName)
-        }
+//        else if
+//            (((dateOfBirth.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
+//            showAlert(self, message:enterDateOfBirth , title: appName)
+//        }
+//        else if
+//            
+//            (((genderText.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
+//            showAlert(self, message:enterGender , title: appName)
+//        }
         else{
             editApiHit()
         }

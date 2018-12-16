@@ -212,15 +212,14 @@ class SignUpVC: UIViewController ,UITextFieldDelegate  ,RegistrationServiceAlamo
         } else if !(checkSpecialletter(stringValue: lastNameText.text!.trimmingCharacters(in: .whitespaces))) {
             showAlert(self, message: thereSpecialCharterThere, title: appName)
         }
-        else if
-            (((dateOfBirth.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
-            showAlert(self, message:enterDateOfBirth , title: appName)
-        }
-        else if
-            
-            (((genderText.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
-            showAlert(self, message:enterGender , title: appName)
-        }
+//        else if
+//            (((dateOfBirth.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
+//            showAlert(self, message:enterDateOfBirth , title: appName)
+//        }
+//        else if
+//            (((genderText.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
+//            showAlert(self, message:enterGender , title: appName)
+//        }
         else if
             (((emailText.text!.trimmingCharacters(in: .whitespaces).isEmpty))){
             showAlert(self, message:enterEmail , title: appName)
