@@ -94,6 +94,7 @@
 		7BE7F4B1209DB376000B8B77 /* AlamofireWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE7F4B0209DB376000B8B77 /* AlamofireWrapper.swift */; };
 		7BE7F4B5209DF561000B8B77 /* ComparePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE7F4B4209DF561000B8B77 /* ComparePlanVC.swift */; };
 		7BE7F4B7209E0005000B8B77 /* HistorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE7F4B6209E0005000B8B77 /* HistorialVC.swift */; };
+		7BE9034021D8FF7B00F0716D /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9033F21D8FF7B00F0716D /* ChangePasswordVC.swift */; };
 		7BF6E169206AAAE900F5EB27 /* categoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6E168206AAAE900F5EB27 /* categoriesVC.swift */; };
 		7BF6E16D206AAC5500F5EB27 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6E16C206AAC5500F5EB27 /* CategoryTableViewCell.swift */; };
 		7BF7DDBA20E8C286008F7AB2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF7DDB820E8C286008F7AB2 /* SWRevealViewController.m */; };
@@ -222,6 +223,7 @@
 		7BE7F4B0209DB376000B8B77 /* AlamofireWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireWrapper.swift; sourceTree = "<group>"; };
 		7BE7F4B4209DF561000B8B77 /* ComparePlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparePlanVC.swift; sourceTree = "<group>"; };
 		7BE7F4B6209E0005000B8B77 /* HistorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorialVC.swift; sourceTree = "<group>"; };
+		7BE9033F21D8FF7B00F0716D /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		7BF6E168206AAAE900F5EB27 /* categoriesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoriesVC.swift; sourceTree = "<group>"; };
 		7BF6E16C206AAC5500F5EB27 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		7BF7DDB820E8C286008F7AB2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				7BC06D362070F4F800A9EE15 /* SettingsVC.swift */,
 				7BB0530A2073EF6E00A3EEB8 /* FAQVC.swift */,
 				7BCEDB4F2068000300CAE883 /* MenuVC.swift */,
+				7BE9033F21D8FF7B00F0716D /* ChangePasswordVC.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				7B3DCE75205E508E00FB35E8 /* AppDelegate.swift in Sources */,
 				7B4AD4732109D2DC00A1AE59 /* TrainerRegisterFormVC.swift in Sources */,
 				7B50BA1820FB901A00E8E661 /* EditProfileVC.swift in Sources */,
+				7BE9034021D8FF7B00F0716D /* ChangePasswordVC.swift in Sources */,
 				7BF7DDBF20E8C68E008F7AB2 /* OptionsVC.swift in Sources */,
 				7BF6E16D206AAC5500F5EB27 /* CategoryTableViewCell.swift in Sources */,
 				7B955DF0209E31E1003C42CE /* FontAwesomeView.swift in Sources */,

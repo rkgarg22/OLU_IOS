@@ -191,6 +191,11 @@ protocol CardListProtocol:class{
     func serverError()
 }
 
+protocol ChangePasswordProtocol:class{
+    func getData(dictionaryContent: NSDictionary)
+    func serverError()
+}
+
 class AlamofireWrapper: NSObject {
     
     class var sharedInstance: AlamofireWrapper{
@@ -238,7 +243,7 @@ class AlamofireWrapper: NSObject {
     var onGoingAgendaDelegate: onGoingAgendaProtocol?
     var markSelectedCardDelegate: MarkCardSelectedProtocol?
     var getCardListDelegate: CardListProtocol?
-    
+    var changePasswordDalegate: ChangePasswordProtocol?
     //MARK:- SignUpFunction
     func resgistration(_ parameters:[String : Any]) {
         print(parameters)
@@ -1319,8 +1324,8 @@ class AlamofireWrapper: NSObject {
     }
     
     func createAgenda(_ parameters:[String : Any]) {
-       let headers:HTTPHeaders = [
-           "Content-Type" : "application/x-www-form-urlencoded"
+        let headers:HTTPHeaders = [
+            "Content-Type" : "application/x-www-form-urlencoded"
         ]
         let urlString = baseUrl + "agenda/create/"
         print("urlString",urlString)
@@ -1415,7 +1420,7 @@ class AlamofireWrapper: NSObject {
     }
     
     func markCardSelected(requestID: String) {
-         let originalUrl = baseUrl + "payment/selectCard/?userID=\(getUserID())&requestId=\(requestID)&lang=es"
+        let originalUrl = baseUrl + "payment/selectCard/?userID=\(getUserID())&requestId=\(requestID)&lang=es"
         let urlString :String = originalUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         print(urlString)
         Alamofire.request(urlString).responseJSON {
@@ -1454,6 +1459,30 @@ class AlamofireWrapper: NSObject {
                 break
             case .failure(_):
                 self.getCardListDelegate?.serverError()
+                print("error",response.result.error!)
+                break
+            }
+        }
+    }
+    
+    func resetPassword(_ parameters:[String : Any]) {
+        print(parameters)
+        let headers:HTTPHeaders = [
+            "Content-Type" : "application/x-www-form-urlencoded"
+        ]
+        Alamofire.request(baseUrl + "users/resetPassword/", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON {
+            (response:DataResponse<Any>) in
+            
+            switch(response.result) {
+            case .success(_):
+                if response.result.value != nil{
+                    print("response = ",response.result.value!)
+                    let dataDict: NSDictionary = response.result.value as! NSDictionary
+                    self.changePasswordDalegate?.getData(dictionaryContent:dataDict)
+                }
+                break
+            case .failure(_):
+                self.changePasswordDalegate?.serverError()
                 print("error",response.result.error!)
                 break
             }

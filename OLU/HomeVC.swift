@@ -105,6 +105,9 @@ class HomeVC: UIViewController ,logoutAlamoFire ,MFMailComposeViewControllerDele
     @IBAction func myProfileBtn(_ sender: UIButtonCustomClass){
         let myVC = storyboard?.instantiateViewController(withIdentifier: "MenuVc") as! MenuVC
         navigationController?.pushViewController(myVC, animated: true)
+        
+       // let myVC = storyboard?.instantiateViewController(withIdentifier: "ChangePasswordVC") as! ChangePasswordVC
+       // navigationController?.pushViewController(myVC, animated: true)
     }
     
     @IBAction func pendingBtn(_ sender: Any) {
