@@ -23,7 +23,7 @@ class TrainerEditProfile: UIViewController ,UITextFieldDelegate  ,editProfileAla
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var iAcceptLabel: UILabel!
     @IBOutlet weak var ScrollView: UIScrollView!
-    //  var locationManager:CLLocationManager!
+    @IBOutlet var changePasswordText: UITextFieldCustomClass!
     
     var datePicker = UIDatePicker()
     var formArray = NSMutableArray()
@@ -299,6 +299,11 @@ class TrainerEditProfile: UIViewController ,UITextFieldDelegate  ,editProfileAla
             firstNameText.becomeFirstResponder()
             nextActivadesScreen()
             //            firstNameText.becomeFirstResponder()
+        }
+        else if textField == changePasswordText{
+            let myVC = storyboard?.instantiateViewController(withIdentifier: "ChangePasswordVC") as! ChangePasswordVC
+            navigationController?.pushViewController(myVC, animated: true)
+            return false
         }
         return true
     }

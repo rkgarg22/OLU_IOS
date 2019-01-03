@@ -253,8 +253,7 @@ class LogInVC: UIViewController ,UITextFieldDelegate ,LogInServiceAlamoFire ,Reg
             if (error == nil){
                 let fbloginresult : FBSDKLoginManagerLoginResult = result!
                 if fbloginresult.grantedPermissions != nil {
-                    if(fbloginresult.grantedPermissions.contains("email"))
-                    {
+                    if(fbloginresult.grantedPermissions.contains("email")){
                         self.getFBUserData()
                         fbLoginManager.logOut()
                     }
@@ -273,7 +272,7 @@ class LogInVC: UIViewController ,UITextFieldDelegate ,LogInServiceAlamoFire ,Reg
                 "firstName": firstName,
                 "lastName": lastName,
                 "emailAddress": fbEmail,
-                "password": "",
+                "password": "olu@123",
                 "facebookId": fbId,
                 "latitude": latitude,
                 "longitude": longitude,
@@ -287,16 +286,14 @@ class LogInVC: UIViewController ,UITextFieldDelegate ,LogInServiceAlamoFire ,Reg
         
         //        // no internet check condition
         if applicationDelegate.isConnectedToNetwork {
+            UserDefaults.standard.set("olu@123", forKey: USER_DEFAULT_USERPASSWORD_Key)
             applicationDelegate.startProgressView(view: self.view)
             AlamofireWrapper.sharedInstance.registrationDelegate = self
             AlamofireWrapper.sharedInstance.resgistration(signUpParameters)
         }
         else {
-            
             showAlert(self, message: noInternetConnection, title: appName)
         }
-        
-        
     }
     
     func logInApiHit(){
@@ -310,6 +307,7 @@ class LogInVC: UIViewController ,UITextFieldDelegate ,LogInServiceAlamoFire ,Reg
         
         // no internet check condition
         if applicationDelegate.isConnectedToNetwork {
+            UserDefaults.standard.set(passwordText.text!, forKey: USER_DEFAULT_USERPASSWORD_Key)
             applicationDelegate.startProgressView(view: self.view)
             AlamofireWrapper.sharedInstance.logInDelegate = self
             AlamofireWrapper.sharedInstance.logIn(loginParameter)

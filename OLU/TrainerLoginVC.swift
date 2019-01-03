@@ -298,6 +298,7 @@ class TrainerLoginVC: UIViewController ,UITextFieldDelegate ,LogInServiceAlamoFi
         
         // no internet check condition
         if applicationDelegate.isConnectedToNetwork {
+            UserDefaults.standard.set( passwordText.text!, forKey: USER_DEFAULT_USERPASSWORD_Key)
             applicationDelegate.startProgressView(view: self.view)
             AlamofireWrapper.sharedInstance.logInDelegate = self
             AlamofireWrapper.sharedInstance.logIn(loginParameter)

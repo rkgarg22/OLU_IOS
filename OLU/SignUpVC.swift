@@ -122,6 +122,7 @@ class SignUpVC: UIViewController ,UITextFieldDelegate  ,RegistrationServiceAlamo
         ]
         // no internet check condition
         if applicationDelegate.isConnectedToNetwork {
+             UserDefaults.standard.set(passwordValue, forKey: USER_DEFAULT_USERPASSWORD_Key)
             applicationDelegate.startProgressView(view: self.view)
             AlamofireWrapper.sharedInstance.registrationDelegate = self
             AlamofireWrapper.sharedInstance.resgistration(signUpParameters)

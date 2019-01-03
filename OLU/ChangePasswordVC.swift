@@ -21,8 +21,11 @@ class ChangePasswordVC: UIViewController ,UITextFieldDelegate, ChangePasswordPro
         if UserDefaults.standard.value(forKey: USER_DEFAULT_USERTYPE) as? String == "user"{
             oluTeamView.isHidden = true;
         }else{
-            oluTeamView.isHidden = false;
+            oluTeamView.isHidden = true;
         }
+        
+       let oldPassword = UserDefaults.standard.value(forKey: USER_DEFAULT_USERPASSWORD_Key) as? String ?? ""
+       oldPasswordText.text = oldPassword
     }
     
     override func didReceiveMemoryWarning() {

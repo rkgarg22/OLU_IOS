@@ -110,6 +110,7 @@ class TrainerRegisterVC:UIViewController ,UITextFieldDelegate  ,SignUpServiceAla
         ]
         
         if applicationDelegate.isConnectedToNetwork {
+            UserDefaults.standard.set( passwordValue, forKey: USER_DEFAULT_USERPASSWORD_Key)
             applicationDelegate.startProgressView(view: self.view)
             AlamofireWrapper.sharedInstance.signUpDelegate = self
             if profilePic.imageAsset != nil{

@@ -138,12 +138,12 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "567881231.453073"
+                  timestampString = "568226488.054191"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "577"
                   endingLineNumber = "577"
-                  offsetFromSymbolStart = "4705">
+                  offsetFromSymbolStart = "3528">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -153,12 +153,12 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "567881231.457152"
+                  timestampString = "568226488.057145"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "577"
                   endingLineNumber = "577"
-                  offsetFromSymbolStart = "5502">
+                  offsetFromSymbolStart = "4104">
                </Location>
             </Locations>
          </BreakpointContent>

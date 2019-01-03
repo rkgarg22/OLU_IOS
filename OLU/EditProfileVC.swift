@@ -13,6 +13,8 @@ class EditProfileVC: UIViewController ,UITextFieldDelegate ,editProfileAlamofire
     
     @IBOutlet var genderText: UITextFieldCustomClass!
     @IBOutlet var dateOfBirth: UITextFieldCustomClass!
+    
+    @IBOutlet var changePasswordText: UITextFieldCustomClass!
     @IBOutlet weak var firstNameText: UITextField!
     @IBOutlet weak var lastNameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
@@ -259,6 +261,12 @@ class EditProfileVC: UIViewController ,UITextFieldDelegate ,editProfileAlamofire
             datePicker.datePickerMode = .date
             textField.inputAccessoryView = toolbar
             datePicker.addTarget(self, action: #selector(EditProfileVC.dateChanged(_:)), for: .valueChanged)
+        }
+        
+        else if textField == changePasswordText{
+            let myVC = storyboard?.instantiateViewController(withIdentifier: "ChangePasswordVC") as! ChangePasswordVC
+            navigationController?.pushViewController(myVC, animated: true)
+            return false
         }
         return true
     }
