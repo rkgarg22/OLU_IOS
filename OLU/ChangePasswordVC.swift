@@ -66,6 +66,7 @@ class ChangePasswordVC: UIViewController ,UITextFieldDelegate, ChangePasswordPro
         ]
         // no internet check condition
         if applicationDelegate.isConnectedToNetwork {
+            UserDefaults.standard.set(passwordValue!, forKey: USER_DEFAULT_USERPASSWORD_Key)
             applicationDelegate.startProgressView(view: self.view)
             AlamofireWrapper.sharedInstance.changePasswordDalegate = self
             AlamofireWrapper.sharedInstance.resetPassword(resetPasswordDict)
