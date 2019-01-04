@@ -24,8 +24,8 @@ class ChangePasswordVC: UIViewController ,UITextFieldDelegate, ChangePasswordPro
             oluTeamView.isHidden = true;
         }
         
-       let oldPassword = UserDefaults.standard.value(forKey: USER_DEFAULT_USERPASSWORD_Key) as? String ?? ""
-       oldPasswordText.text = oldPassword
+        let oldPassword = UserDefaults.standard.value(forKey: USER_DEFAULT_USERPASSWORD_Key) as? String ?? ""
+        oldPasswordText.text = oldPassword
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,7 +80,7 @@ class ChangePasswordVC: UIViewController ,UITextFieldDelegate, ChangePasswordPro
         applicationDelegate.dismissProgressView(view: self.view)
         let success = dictionaryContent.value(forKey: "success") as AnyObject
         if success .isEqual(1) {
-            
+            openAlert(message: "¡La contraseña ha sido guardada exitosamente!")
         }
         else{
             applicationDelegate.dismissProgressView(view: self.view)
@@ -92,6 +92,25 @@ class ChangePasswordVC: UIViewController ,UITextFieldDelegate, ChangePasswordPro
     func serverError(){
         applicationDelegate.dismissProgressView(view: self.view)
         showAlert(self, message: serverErrorString, title: appName)
+    }
+    
+    func openAlert(message: String) {
+        let alertController = UIAlertController(title:message, message: "", preferredStyle: .alert)
+        // Create the actions
+        let YesAction = UIAlertAction(title:"Ok", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            if UserDefaults.standard.value(forKey: USER_DEFAULT_USERTYPE) as? String == "user"{
+                if let vc = self.navigationController?.viewControllers.filter({ $0 is MenuVC }).first {
+                    self.navigationController?.popToViewController(vc, animated: true)
+                }
+            }else{
+                if let vc = self.navigationController?.viewControllers.filter({ $0 is ProfileVC }).first {
+                    self.navigationController?.popToViewController(vc, animated: true)
+                }
+            }
+        }
+        alertController.addAction(YesAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     
