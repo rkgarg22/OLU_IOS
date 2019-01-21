@@ -34,6 +34,7 @@ class HomeVC: UIViewController ,logoutAlamoFire ,MFMailComposeViewControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         determineMyCurrentLocation()
+        applicationDelegate.googleAnalytics(messgae: "Applicaiton Start")
     }
     
     override func viewWillAppear(_ animated: Bool) {
