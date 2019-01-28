@@ -86,7 +86,7 @@ class HomeVC: UIViewController ,logoutAlamoFire ,MFMailComposeViewControllerDele
     //share btn
     @IBAction func shareBtn(_ sender: UIButtonCustomClass){
         // text to share
-        let text = "OLU"
+        let text = "Olu. App te contenta con los mejores, donde quieras y cuando quieras. \n¡Te invito a descargarla! \n\nhttps://apple.co/2Ri0hgk"
         // set up activity view controller
         let textToShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)

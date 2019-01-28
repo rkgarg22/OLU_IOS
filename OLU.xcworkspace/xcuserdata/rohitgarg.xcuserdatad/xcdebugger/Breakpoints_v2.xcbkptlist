@@ -138,7 +138,7 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "568226488.054191"
+                  timestampString = "569866631.5800869"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "577"
@@ -153,7 +153,7 @@
                   moduleName = "OLU"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AppDelegate.swift"
-                  timestampString = "568226488.057145"
+                  timestampString = "569866631.582363"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "577"
@@ -208,22 +208,6 @@
             startingLineNumber = "250"
             endingLineNumber = "250"
             landmarkName = "showRequestView(dict:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OLU/AllTrainerListVC.swift"
-            timestampString = "566406236.61134"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -353,6 +337,54 @@
             endingLineNumber = "395"
             landmarkName = "hitBookingApi()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OLU/AlamofireWrapper.swift"
+            timestampString = "569866626.643593"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
+            landmarkName = "booking(trainerUserID:catId:bookingdate:bookingTime:priceGroup:lat:long:address:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OLU.AlamofireWrapper.booking(trainerUserID: Swift.Int, catId: Swift.Int, bookingdate: Swift.String, bookingTime: Swift.String, priceGroup: Swift.String, lat: Swift.String, long: Swift.String, address: Swift.String) -&gt; ()"
+                  moduleName = "OLU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AlamofireWrapper.swift"
+                  timestampString = "569866631.535736"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "510"
+                  endingLineNumber = "510"
+                  offsetFromSymbolStart = "2004">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in OLU.AlamofireWrapper.booking(trainerUserID: Swift.Int, catId: Swift.Int, bookingdate: Swift.String, bookingTime: Swift.String, priceGroup: Swift.String, lat: Swift.String, long: Swift.String, address: Swift.String) -&gt; ()"
+                  moduleName = "OLU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rohitgarg/Documents/Elisa/OLU/IOS_OLU-master/OLU/AlamofireWrapper.swift"
+                  timestampString = "569866631.539719"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "513"
+                  endingLineNumber = "513"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
