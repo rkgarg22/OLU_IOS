@@ -86,7 +86,10 @@ class SelectCalendarVC: UIViewController ,FSCalendarDelegate,FSCalendarDataSourc
     @objc func dateChanged(_ sender: UIDatePicker) {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_GB") as Locale?
         listingDict["selectedTime"] = dateFormatter.string(from:sender.date)
+        //selectedTimeStr = String(selectedTimeStr.split(separator: " ")[0])
+        //listingDict["selectedTime"] = selectedTimeStr
         print("listingDict",listingDict)
         timeBtn.setTitle(dateFormatter.string(from:sender.date), for: .normal)
         //        datePickerView.isHidden = true
@@ -219,6 +222,7 @@ class SelectCalendarVC: UIViewController ,FSCalendarDelegate,FSCalendarDataSourc
         let currenDate = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        formatter.locale = NSLocale(localeIdentifier: "en_GB") as Locale?
         let currentDateString = formatter.string(from: currenDate)
         let currentDateObject = formatter.date(from: currentDateString)
         
@@ -248,6 +252,7 @@ class SelectCalendarVC: UIViewController ,FSCalendarDelegate,FSCalendarDataSourc
         let currenDate = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        formatter.locale = NSLocale(localeIdentifier: "en_GB") as Locale?
         let currentDateString = formatter.string(from: currenDate)
         let currentDateObject = formatter.date(from: currentDateString)
         
@@ -255,6 +260,11 @@ class SelectCalendarVC: UIViewController ,FSCalendarDelegate,FSCalendarDataSourc
         let selectedTime = listingDict.value(forKey: "selectedTime") as! String
         let selectedDateTime = selectedDate + " " + selectedTime
         let selectedDateObject = formatter.date(from: selectedDateTime)
+        
+//        if(currentDateObject == nil){
+//            dateFormatter.dateFormat = "HH:mm:ss"
+//            timeConverter = dateFormatter.date(from: startTime)
+//        }
         
         let cal = Calendar.current
         let components = cal.dateComponents([.minute], from: currentDateObject!, to: selectedDateObject!)

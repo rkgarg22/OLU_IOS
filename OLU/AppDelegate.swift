@@ -476,6 +476,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,confirmBookingAlamofire {
                 self.scheduleLocalNotificationForSession(sessionDict: sessionDict, bookingID: bookingID)
             case .denied:
                 print("Application Not Allowed to Display Notifications")
+                
+            case .provisional:
+                 print("Application Not Allowed to Display Notifications")
             }
         }
     }

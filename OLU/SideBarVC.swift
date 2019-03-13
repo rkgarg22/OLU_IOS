@@ -86,6 +86,9 @@ class SideBarVC: UIViewController ,isAvailableAlamofire ,logoutAlamoFire, profil
                 self.scheduleLocalNotification()
             case .denied:
                 print("Application Not Allowed to Display Notifications")
+                
+            case .provisional:
+                print("Application Not Allowed to Display Notifications")
             }
         }
     }

@@ -154,6 +154,7 @@ class ReservationVC: UIViewController ,bookingAlamoFire ,paymentInitiateAlamofir
         
         //calculate time
         let startTime = localSavedDict.value(forKey: "selectedTime") as? String
+        timeLabel.text = startTime
         getEndTime(startTime: startTime!, dateConverted: dateConverted!)
     }
     
@@ -169,11 +170,12 @@ class ReservationVC: UIViewController ,bookingAlamoFire ,paymentInitiateAlamofir
             timeConverter = dateFormatter.date(from: startTime)
         }
         
-        let calendar = Calendar.current
-        let endTimeDate = calendar.date(byAdding: .hour, value: 1, to: timeConverter!)
-        
-        endTime.text = dateFormatter.string(from: endTimeDate!)
-        timeLabel.text = dateFormatter.string(from: timeConverter!)
+        if(timeConverter != nil){
+            let calendar = Calendar.current
+            let endTimeDate = calendar.date(byAdding: .hour, value: 1, to: timeConverter!)
+            endTime.text = dateFormatter.string(from: endTimeDate!)
+            timeLabel.text = dateFormatter.string(from: timeConverter!)
+        }
     }
     
     // auto fill category type

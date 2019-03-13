@@ -7,6 +7,9 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
   - Cosmos (15.0.0)
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Fabric (1.7.13)
   - FBSDKCoreKit (4.32.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.32.0):
@@ -20,10 +23,10 @@ PODS:
   - FirebaseAnalytics (4.2.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
   - FirebaseCore (4.0.20):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseInstanceID (2.0.10):
     - FirebaseCore (~> 4.0)
   - FirebaseMessaging (2.2.0):
@@ -43,7 +46,7 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.4)
   - GoogleToolboxForMac/Logger (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
-  - GoogleToolboxForMac/NSData+zlib (2.1.4):
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - MBProgressHUD (1.1.0)
   - nanopb (0.3.8):
@@ -59,6 +62,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Cosmos
+  - Crashlytics (~> 3.9.3)
+  - Fabric (~> 1.7.2)
   - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Messaging
@@ -68,10 +73,35 @@ DEPENDENCIES:
   - MBProgressHUD
   - SDWebImage
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Bolts
+    - Cosmos
+    - Crashlytics
+    - Fabric
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - FirebaseMessaging
+    - FSCalendar
+    - GoogleMaps
+    - GooglePlaces
+    - GoogleToolboxForMac
+    - MBProgressHUD
+    - nanopb
+    - Protobuf
+    - SDWebImage
+
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Cosmos: a6dbd3d0baa0cc8f51f8598f7508d5a09d0a9ade
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
   FBSDKCoreKit: 55d7f2ac45d9c4b9b6119f4e43900fe84b9b7b1b
   FBSDKLoginKit: 32ac05c2a59952c363c2e85aafa8f73ba93bcbad
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
@@ -88,6 +118,6 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: 0dc757a471665ef86d4e00d8e4569a8ab090e34e
+PODFILE CHECKSUM: 748b7dc0cb82f4e9bf272c5eb9438db716ad804b
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.0

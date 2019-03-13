@@ -39,8 +39,9 @@ class AllTrainerListVC: UIViewController ,UITableViewDataSource ,UITableViewDele
         
         trainerListTable.tableFooterView = UIView()
         trainerListTable.isHidden = true
-        //        lat = "";
-        //        long = "";
+                //lat = "6.19690922304067";
+               //long = "-75.5703850098067";
+         //getListingApi(genderString: "", lat:lat,long: long)
         if(lat == "" && long == ""){
             determineMyCurrentLocation()
         }else{
