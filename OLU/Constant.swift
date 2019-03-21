@@ -70,6 +70,7 @@ let comprarAlert = "¿Estas seguro y confirmas que deseas comprar el plan selecc
 let imageUpload = "Quieres actualizar tu perfil Imagen?"
 let selectLatLong = "Seleccione latitud y longitud"
 let nothingToUpdate = "Ahi esta. othing para actualizar"
+let NumberOfperson = "Número of personas: "
 
 let cancelMessageForFirst15 = "¿Estas seguro que deseas cancelar?"
 let cancelMessageForAfter15 = "¿Estas seguro que deseas cancelar? Al confirmar, la sesión te será cobrada en su totalidad."

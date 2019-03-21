@@ -9,8 +9,12 @@
 import UIKit
 
 class PendingCell: UITableViewCell {
-
+    
+    @IBOutlet weak var editarBtn: UIButton!
+    @IBOutlet weak var numberOfperson: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet var crossBtn: UIButton!
+    @IBOutlet weak var heightView: NSLayoutConstraint!
     @IBOutlet var phoneRingingBtn: UIButton!
     @IBOutlet var messageBtn: UIButton!
     @IBOutlet var directionBtn: UIButton!
@@ -22,10 +26,10 @@ class PendingCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -36,9 +40,10 @@ class PendingCell: UITableViewCell {
         let catId = resultDict.value(forKey: "categoryID") as! Int
         let catName = getCatName(catID: catId)
         categoryLabel.text = catName
-        
+        addressLabel.text = resultDict.value(forKey: "bookingAddress") as? String ?? ""
+        let numOfPerson = resultDict.value(forKey: "bookingFor") as! Int
+        numberOfperson.text =  "\(NumberOfperson) \(numOfPerson)"
         let selectedDate = resultDict.value(forKey: "bookingDate") as? String
- 
         dateLabel.text = getDateInFormat(selectedDate: selectedDate!)
         let firstName = resultDict.value(forKey: "firstName") as! String
         let lastName = resultDict.value(forKey: "lastName") as! String
@@ -64,6 +69,10 @@ class PendingCell: UITableViewCell {
         return timeFormat
     }
     
+    
+    
+    
+    
     func getDateInFormat(selectedDate: String)->String{
         var convertedDate = String()
         let dateFormatter = DateFormatter()
@@ -81,5 +90,5 @@ class PendingCell: UITableViewCell {
         convertedDate = dateWeek + "/" + monthName.capitalized
         return convertedDate
     }
-
+    
 }

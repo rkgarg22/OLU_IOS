@@ -477,8 +477,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,confirmBookingAlamofire {
             case .denied:
                 print("Application Not Allowed to Display Notifications")
                 
-            case .provisional:
-                 print("Application Not Allowed to Display Notifications")
+//            case .provisional:
+//                 print("Application Not Allowed to Display Notifications")
             }
         }
     }

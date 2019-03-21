@@ -10,7 +10,14 @@ import UIKit
 
 class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,PendingAlamofire ,confirmBookingAlamofire{
     @IBOutlet weak var totalPrice: UILabelCustomClass!
+    @IBOutlet weak var categoryLabel: UILabelCustomClass!
+    @IBOutlet weak var nameLabel: UILabelCustomClass!
+    @IBOutlet weak var dateLabel: UILabelCustomClass!
     
+    @IBOutlet weak var timeLabel: UILabelCustomClass!
+    @IBOutlet weak var addressLabel: UILabelCustomClass!
+    @IBOutlet weak var numberOfPersona: UILabelCustomClass!
+    @IBOutlet weak var editarView: UIView!
     @IBOutlet weak var totalHeight: NSLayoutConstraint!
     @IBOutlet weak var countlabel: UILabelCustomClass!
     @IBOutlet weak var groupName: UILabel!
@@ -32,7 +39,7 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     @IBOutlet var realizadasTableView: UITableView!
     @IBOutlet var acceptBtn: UIButton!
     @IBOutlet var declineBtn: UIButton!
-    
+    @IBOutlet weak var acceptedLbl: UILabelCustomClass!
     var resultArray = NSMutableArray()
     var selectedBtn = UIButton()
     var selectedOption = 0
@@ -41,6 +48,8 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     var selectedIndex = -1;
     var popupDict = NSDictionary()
     var isPaymentRequire = "0"
+    var isSelectedAcceptedUserBtn : Bool = false
+    var isFromAcc : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +72,26 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func numberOfPerson(_ sender: Any) {
+    }
+    
+    @IBAction func acceptedUserBtn(_ sender: Any) {
+        if !isSelectedAcceptedUserBtn {
+            isSelectedAcceptedUserBtn = true
+            isFromAcc = true
+            selectedOption = 2
+            resultArray = []
+            pendingBtn.isSelected = false
+            realizadas.isSelected = false
+            pendingTableView.isHidden = true
+            realizadasTableView.isHidden = true
+            acceptedLbl.textColor = UIColor(red: 0/255, green: 151/255, blue: 167/255, alpha: 1.0)
+            pendingListApiHit(status: "0")
+        }
+    }
+    
+    
     @IBAction func accptBtn(_ sender: UIButton) {
         
         let alertController = UIAlertController(title:"¿Estás  seguro que deseas confirmar la reserva?", message: "", preferredStyle: .alert)
@@ -141,7 +170,10 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     
     @IBAction func pendingBtn(_ sender: UIButton) {
         if !sender.isSelected {
+            isFromAcc = false
+            isSelectedAcceptedUserBtn = false
             selectedOption = 0
+            acceptedLbl.textColor = UIColor(red: 69/255, green: 89/255, blue: 103/255, alpha: 1.0)
             resultArray = []
             pendingBtn.isSelected = true
             realizadas.isSelected = false
@@ -159,6 +191,9 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     
     @IBAction func realizadasBtn(_ sender: UIButton) {
         if !sender.isSelected {
+            isFromAcc = false
+            isSelectedAcceptedUserBtn = false
+            acceptedLbl.textColor = UIColor(red: 69/255, green: 89/255, blue: 103/255, alpha: 1.0)
             selectedOption = 1
             resultArray = []
             pendingBtn.isSelected = false
@@ -417,10 +452,10 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
         let minutesDiffFromStartClass = componentsMinuteFromStartDate.minute!
         
         if(diffHour<2){
-//            if(diffMinutesFromCreated <= 45){
-//                message = cancelMessageForNext45;
-//                isPaymentRequire = "1"
-//            }
+            //            if(diffMinutesFromCreated <= 45){
+            //                message = cancelMessageForNext45;
+            //                isPaymentRequire = "1"
+            //            }
             if(minutesDiff <= 15){
                 message = cancelMessageForFirst15;
                 isPaymentRequire = "0"
@@ -429,10 +464,10 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
                 isPaymentRequire = "1"
             }
         }else{
-//            if(diffMinutesFromCreated <= 45){
-//                message = cancelMessageForNext45;
-//                isPaymentRequire = "1"
-//            }else
+            //            if(diffMinutesFromCreated <= 45){
+            //                message = cancelMessageForNext45;
+            //                isPaymentRequire = "1"
+            //            }else
             if(minutesDiffFromStartClass > 75){
                 message = cancelMessageForMore75;
                 isPaymentRequire = "0"
@@ -510,7 +545,6 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
                 }
             }
         }
-        
         let cancelAction = UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default) {
             UIAlertAction in
         }
@@ -532,6 +566,12 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
             var resultDict = NSDictionary()
             resultDict = resultArray[indexPath.row] as! NSDictionary
             cell.resultDict(resultDict: resultDict)
+            if isFromAcc {
+                cell.heightView.constant = 0
+            } else {
+                cell.heightView.constant = 100
+            }
+            
             cell.crossBtn.tag = indexPath.row
             cell.messageBtn.tag = indexPath.row
             cell.phoneRingingBtn.tag = indexPath.row
