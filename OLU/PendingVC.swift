@@ -8,7 +8,11 @@
 
 import UIKit
 
-class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,PendingAlamofire ,confirmBookingAlamofire{
+
+class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,PendingAlamofire ,confirmBookingAlamofire, UIPickerViewDelegate, UIPickerViewDataSource, UpdateLocationForExistingSession, SessionUpdateProtocol{
+    
+    
+    
     @IBOutlet weak var totalPrice: UILabelCustomClass!
     @IBOutlet weak var categoryLabel: UILabelCustomClass!
     @IBOutlet weak var nameLabel: UILabelCustomClass!
@@ -40,6 +44,9 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     @IBOutlet var acceptBtn: UIButton!
     @IBOutlet var declineBtn: UIButton!
     @IBOutlet weak var acceptedLbl: UILabelCustomClass!
+    
+    @IBOutlet var noOfPersonPickerView: UIPickerView!
+    @IBOutlet var pickerDoneBtn: UIButton!
     var resultArray = NSMutableArray()
     var selectedBtn = UIButton()
     var selectedOption = 0
@@ -50,6 +57,15 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     var isPaymentRequire = "0"
     var isSelectedAcceptedUserBtn : Bool = false
     var isFromAcc : Bool = false
+    var selectedInValueFromPicker = -1;
+    var pickerData: [String] = [String]()
+    var selectedDict = NSDictionary()
+    
+    var selectedAddress: String = ""
+    var selectedLongitude: String = ""
+    var selectedLatitude: String = ""
+    var selectBookingFor: String = ""
+    var apiStatus = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,14 +74,21 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
         if userType == "trainer" {
             //totalHeight.constant = 60
             viewTrainer.isHidden = false
+            acceptedLbl.isHidden = true
             isTrainer = true
+            apiStatus = "0"
             pendingListApiHit(status: "0")
         }else{
             //totalHeight.constant = 0
+            acceptedLbl.isHidden = false
+            apiStatus = "3"
             pendingListApiHit(status: "3")
         }
         pendingTableView.tableFooterView = UIView()
         realizadasTableView.tableFooterView = UIView()
+        self.noOfPersonPickerView.delegate = self
+        self.noOfPersonPickerView.dataSource = self
+        pickerData = ["1", "2", "3", "4", "Empresarial"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,7 +96,81 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func pickerDoneBtnClick(_ sender: Any){
+        numberOfPersona.text = pickerData[selectedInValueFromPicker];
+        noOfPersonPickerView.isHidden = true
+        pickerDoneBtn.isHidden = true
+        
+        if (pickerData[selectedInValueFromPicker] == "1"){
+            selectBookingFor = "1"
+        }else if (pickerData[selectedInValueFromPicker] == "2"){
+            selectBookingFor = "2"
+        }else if (pickerData[selectedInValueFromPicker] == "3"){
+            selectBookingFor = "4"
+        }else if (pickerData[selectedInValueFromPicker] == "4"){
+            selectBookingFor = "5"
+        }else if (pickerData[selectedInValueFromPicker] == "Empresarial"){
+            selectBookingFor = "3"
+        }
+    }
+    
+    @IBAction func addressBtnClick(_ sender: Any) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "ChangeLocationVc") as! ChangeLocationVC
+        myVC.selectedSessionDictForUpdateLocation = selectedDict
+        myVC.isFromUpdateSessionLocation = true
+        myVC.updateLocationDelegate = self
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+    @IBAction func gurdadBtnClick(_ sender: Any){
+        if applicationDelegate.isConnectedToNetwork {
+            let bookingID = selectedDict.value(forKey: "bookingID") as? Int ?? 0
+            AlamofireWrapper.sharedInstance.sessionUpdateProtocol = self
+            AlamofireWrapper.sharedInstance.sessionUpdate(bookingID: String(bookingID), bookingType: selectBookingFor, latitude: selectedLatitude, longitude: selectedLongitude, address: selectedAddress)
+        }else{
+            showAlert(self, message: noInternetConnection, title: appName)
+        }
+    }
+    
+    func getData(dictionaryContent: NSDictionary) {
+        let suucess = dictionaryContent.value(forKey: "success") as AnyObject
+        if suucess.isEqual(1){
+            noOfPersonPickerView.isHidden = true
+            pickerDoneBtn.isHidden = true
+            editarView.isHidden = true
+            resultArray = []
+            pendingListApiHit(status: apiStatus)
+        }else{
+            let error = dictionaryContent.value(forKey: "error") as! String
+            showAlert(self, message: error, title: appName)
+        }
+    }
+    
+    func getLocation(address: String, latitude: String, longitude: String) {
+        selectedAddress = address;
+        selectedLatitude = latitude;
+        selectedLongitude = longitude;
+    }
+    
     @IBAction func numberOfPerson(_ sender: Any) {
+        noOfPersonPickerView.isHidden = false
+        pickerDoneBtn.isHidden = false
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedInValueFromPicker = row;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
     }
     
     @IBAction func acceptedUserBtn(_ sender: Any) {
@@ -87,6 +184,7 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
             pendingTableView.isHidden = true
             realizadasTableView.isHidden = true
             acceptedLbl.textColor = UIColor(red: 0/255, green: 151/255, blue: 167/255, alpha: 1.0)
+            apiStatus = "0"
             pendingListApiHit(status: "0")
         }
     }
@@ -181,9 +279,11 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
             realizadasTableView.isHidden = true
             let userType = UserDefaults.standard.value(forKey: USER_DEFAULT_USERTYPE) as! String
             if userType == "trainer" {
+                apiStatus = "3"
                 pendingListApiHit(status: "3")
             }
             else{
+                apiStatus = "3"
                 pendingListApiHit(status: "3")
             }
         }
@@ -200,6 +300,7 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
             realizadas.isSelected = true
             pendingTableView.isHidden = true
             realizadasTableView.isHidden = true
+            apiStatus = "1"
             pendingListApiHit(status: "1")
         }
     }
@@ -214,6 +315,7 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
                 completedTrainer.isSelected = false
                 pendingTableView.isHidden = true
                 realizadasTableView.isHidden = true
+                apiStatus = "0"
                 pendingListApiHit(status: "0")
             }
         }
@@ -225,6 +327,7 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
                 completedTrainer.isSelected = false
                 pendingTableView.isHidden = true
                 realizadasTableView.isHidden = true
+                apiStatus = "1"
                 pendingListApiHit(status: "1")
             }
         }
@@ -237,6 +340,7 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
                 completedTrainer.isSelected = true
                 pendingTableView.isHidden = true
                 realizadasTableView.isHidden = true
+                apiStatus = "3"
                 pendingListApiHit(status: "3")
             }
         }
@@ -344,9 +448,6 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
             }
             groupImage.image = #imageLiteral(resourceName: "greyBack")
         }
-        
-        
-        
         let convStartTime = convertTime(timeString: timeString)
         timeText.text = "\(convStartTime)"
         dateText.text = getDateInFormat(selectedDate: dateString!)
@@ -555,7 +656,68 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
         self.present(alertController, animated: true, completion: nil)
     }
     
-    //MARK: - Table View Delegate
+    @IBAction func editarViewCloseBtn(_ sender: Any){
+        editarView.isHidden = true
+    }
+    
+    @objc func editarBtnClick(sender:UIButton) {
+        selectedDict = resultArray[sender.tag] as! NSDictionary
+        editarView.isHidden = false
+        categoryLabel.text = selectedDict.value(forKey: "category") as? String
+        
+        let firsrtName = selectedDict.value(forKey: "firstName") as! String
+        let lastName = selectedDict.value(forKey: "lastName") as! String
+        nameLabel.text = firsrtName + " " + lastName
+        dateLabel.text = selectedDict.value(forKey: "bookingDate") as? String
+        
+        let startTime = selectedDict.value(forKey: "bookingStart") as! String
+        let endTime = selectedDict.value(forKey: "bookingEnd") as! String
+        timeLabel.text = "\(getTimeInFormat(time: startTime)) - \(getTimeInFormat(time: endTime))"
+        addressLabel.text =  "\(directionText) \(selectedDict.value(forKey: "bookingAddress") as! String)"
+        
+        let bookingFor =  selectedDict.value(forKey: "bookingFor") as! Int
+        switch  bookingFor {
+        case 3 :
+            numberOfPersona.text =  "Empresarial"
+        case 1 :
+            numberOfPersona.text =  "1"
+        default:
+            if bookingFor == 2 {
+                numberOfPersona.text =  "2"
+            }
+            else if bookingFor == 4 {
+                numberOfPersona.text =  "3"
+            }
+            else if bookingFor == 5 {
+                numberOfPersona.text =  "4"
+            }
+        }
+        selectedAddress = selectedDict.value(forKey: "bookingAddress") as! String;
+        selectedLongitude = selectedDict.value(forKey: "bookingLongitude") as! String
+        selectedLatitude = selectedDict.value(forKey: "bookingLatitude") as! String
+        selectBookingFor = String(bookingFor)
+    }
+    
+    func getTimeInFormat(time: String)-> String{
+        var timeFormat = String()
+        
+        // date format
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss" //Your date format
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0) //Current time zone
+        let dateConverted = dateFormatter.date(from: time)
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "hh:mm a" //Your date format
+        timeFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
+        timeFormatter.timeZone = TimeZone(secondsFromGMT: 0) //Current time zone
+        timeFormat = timeFormatter.string(from: dateConverted!)
+        
+        return timeFormat
+    }
+    
+    //MARK: - Table View Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return resultArray.count
     }
@@ -576,10 +738,23 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
             cell.messageBtn.tag = indexPath.row
             cell.phoneRingingBtn.tag = indexPath.row
             cell.directionBtn.tag = indexPath.row
+            cell.editarBtn.tag = indexPath.row
             cell.crossBtn.addTarget(self, action: #selector(cancelBtn), for: .touchUpInside)
             cell.messageBtn.addTarget(self, action: #selector(messageBtn), for: .touchUpInside)
             cell.phoneRingingBtn.addTarget(self, action: #selector(phoneRingingBtn), for: .touchUpInside)
             cell.directionBtn.addTarget(self, action: #selector(mapabtnClick), for: .touchUpInside)
+            cell.editarBtn.addTarget(self, action: #selector(editarBtnClick), for: .touchUpInside)
+            
+            let userType = UserDefaults.standard.value(forKey: USER_DEFAULT_USERTYPE) as? String
+            if userType == "trainer" {
+                cell.addressLabel.text = ""
+                cell.numberOfperson.text = ""
+                cell.editarBtn.isHidden = true
+            }else{
+                cell.addressLabel.isHidden = false
+                cell.numberOfperson.isHidden = false
+                cell.editarBtn.isHidden = false
+            }
             return cell
         }
         else{

@@ -13,6 +13,10 @@ import MapKit
 import CoreLocation
 import Alamofire
 
+protocol UpdateLocationForExistingSession {
+    func getLocation(address:String, latitude:String, longitude:String)
+}
+
 class ChangeLocationVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,UITextFieldDelegate ,CLLocationManagerDelegate, GMSMapViewDelegate {
     @IBOutlet weak var mapView: GMSMapView!
     
@@ -36,11 +40,22 @@ class ChangeLocationVC: UIViewController ,UITableViewDelegate ,UITableViewDataSo
     var addess = String()
     var savedLocationArray =  [[String: Any]]()
     var isLocationFilled = false;
+    var isFromUpdateSessionLocation = false
+    var selectedSessionDictForUpdateLocation = NSDictionary()
+    var updateLocationDelegate:UpdateLocationForExistingSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        determineMyCurrentLocation()
+        if(self.isFromUpdateSessionLocation == false){
+            determineMyCurrentLocation()
+        }else{
+            self.placesLabel.text = selectedSessionDictForUpdateLocation.value(forKey: "bookingAddress") as? String
+            let latitude = (selectedSessionDictForUpdateLocation.value(forKey: "bookingLatitude") as AnyObject).doubleValue
+            let longitude = (selectedSessionDictForUpdateLocation.value(forKey: "bookingLongitude") as AnyObject).doubleValue
+            let coordinates = CLLocationCoordinate2DMake(latitude ?? 0, longitude ?? 0)
+            self.centerMapOnLocation(coordinates: coordinates)
+        }
         chanegDirectionLabel.tableFooterView = UIView()
         startFunc()
         
@@ -49,8 +64,6 @@ class ChangeLocationVC: UIViewController ,UITableViewDelegate ,UITableViewDataSo
             if savedLocationArray.count != 0 {
                 savedLocationTableView.isHidden = false
                 savedLocationTableView.reloadData()
-                // heightConstraint.constant = savedLocationTableView.contentSize.height
-                // savedLocationTableView.layoutIfNeeded()
             }
         }
         chanegDirectionLabel.isHidden = true
@@ -290,35 +303,44 @@ class ChangeLocationVC: UIViewController ,UITableViewDelegate ,UITableViewDataSo
     
     @IBAction func confirmBtn(_ sender: AnyObject) {
         let addressText = (placesLabel.text?.trimmingCharacters(in: .whitespaces))
-        if(isComingFrom2hrCondition){
+        if(isFromUpdateSessionLocation){
             if(latitude != "" && longitude != "" && addressText != ""){
-                listingDict["latitude"] = latitude
-                listingDict["longitude"] = longitude
-                listingDict["address"] = placesLabel.text
-                saveLocationLocal(currentAddresss: placesLabel.text!)
-                if(isFromTrainerList){
-                    let myVC = storyboard?.instantiateViewController(withIdentifier: "ReservationVc") as! ReservationVC
-                    myVC.localSavedDict = listingDict
-                    myVC.trainerDetailDict = trainerDetailDict
-                    navigationController?.pushViewController(myVC, animated: true)
-                }else{
-                    let myVC = storyboard?.instantiateViewController(withIdentifier: "AllTrainerListVc") as! AllTrainerListVC
-                    myVC.listingDict = listingDict
-                    navigationController?.pushViewController(myVC, animated: true)
-                }
+                updateLocationDelegate.getLocation(address: addressText!, latitude: latitude, longitude: longitude);
+                _ = navigationController?.popViewController(animated: true)
             }else{
                 showAlert(self, message: selectLatLong, title: appName)
             }
         }else{
-            if(latitude != "" && longitude != "" && addressText != ""){
-                listingDict["latitude"] = latitude
-                listingDict["longitude"] = longitude
-                listingDict["address"] = addressText
-                saveLocationLocal(currentAddresss: placesLabel.text!)
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateLatLong"), object:listingDict);
-                _ = navigationController?.popViewController(animated: true)
+            if(isComingFrom2hrCondition){
+                if(latitude != "" && longitude != "" && addressText != ""){
+                    listingDict["latitude"] = latitude
+                    listingDict["longitude"] = longitude
+                    listingDict["address"] = placesLabel.text
+                    saveLocationLocal(currentAddresss: placesLabel.text!)
+                    if(isFromTrainerList){
+                        let myVC = storyboard?.instantiateViewController(withIdentifier: "ReservationVc") as! ReservationVC
+                        myVC.localSavedDict = listingDict
+                        myVC.trainerDetailDict = trainerDetailDict
+                        navigationController?.pushViewController(myVC, animated: true)
+                    }else{
+                        let myVC = storyboard?.instantiateViewController(withIdentifier: "AllTrainerListVc") as! AllTrainerListVC
+                        myVC.listingDict = listingDict
+                        navigationController?.pushViewController(myVC, animated: true)
+                    }
+                }else{
+                    showAlert(self, message: selectLatLong, title: appName)
+                }
             }else{
-                showAlert(self, message: selectLatLong, title: appName)
+                if(latitude != "" && longitude != "" && addressText != ""){
+                    listingDict["latitude"] = latitude
+                    listingDict["longitude"] = longitude
+                    listingDict["address"] = addressText
+                    saveLocationLocal(currentAddresss: placesLabel.text!)
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateLatLong"), object:listingDict);
+                    _ = navigationController?.popViewController(animated: true)
+                }else{
+                    showAlert(self, message: selectLatLong, title: appName)
+                }
             }
         }
     }

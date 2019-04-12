@@ -196,6 +196,11 @@ protocol ChangePasswordProtocol:class{
     func serverError()
 }
 
+protocol SessionUpdateProtocol:class{
+    func getData(dictionaryContent: NSDictionary)
+    func serverError()
+}
+
 class AlamofireWrapper: NSObject {
     
     class var sharedInstance: AlamofireWrapper{
@@ -244,6 +249,7 @@ class AlamofireWrapper: NSObject {
     var markSelectedCardDelegate: MarkCardSelectedProtocol?
     var getCardListDelegate: CardListProtocol?
     var changePasswordDalegate: ChangePasswordProtocol?
+    var sessionUpdateProtocol: SessionUpdateProtocol?
     //MARK:- SignUpFunction
     func resgistration(_ parameters:[String : Any]) {
         print(parameters)
@@ -1483,6 +1489,29 @@ class AlamofireWrapper: NSObject {
                 break
             case .failure(_):
                 self.changePasswordDalegate?.serverError()
+                print("error",response.result.error!)
+                break
+            }
+        }
+    }
+    
+    
+    func sessionUpdate(bookingID : String, bookingType: String,latitude: String, longitude:String, address:String) {
+        let originalUrl = baseUrl + "bookingUpdate/?userID=\(getUserID())&bookingID=\(bookingID)&bookingType=\(bookingType)&latitude=\(latitude)&longitude=\(longitude)&address=\(address)"
+        let urlString :String = originalUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print(urlString)
+        Alamofire.request(urlString).responseJSON {
+            (response:DataResponse<Any>) in
+            switch(response.result) {
+            case .success(_):
+                if response.result.value != nil{
+                    print("response = ",response.result.value!)
+                    let dataDict: NSDictionary = response.result.value as! NSDictionary
+                    self.sessionUpdateProtocol?.getData(dictionaryContent: dataDict)
+                }
+                break
+            case .failure(_):
+                self.sessionUpdateProtocol?.serverError()
                 print("error",response.result.error!)
                 break
             }

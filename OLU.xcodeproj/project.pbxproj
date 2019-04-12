@@ -943,8 +943,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -998,8 +998,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1032,8 +1032,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OLU/OLU.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7Z5AQZ8848;
@@ -1042,7 +1042,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.OLU.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4ac5ca5a-00d2-4d98-b728-d96c07dddef8";
-				PROVISIONING_PROFILE_SPECIFIER = OLU_DIST;
+				PROVISIONING_PROFILE_SPECIFIER = OLUDevelopment;
 				SWIFT_OBJC_BRIDGING_HEADER = "OLU/OLU-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1057,8 +1057,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OLU/OLU.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7Z5AQZ8848;
 				INFOPLIST_FILE = OLU/Info.plist;
@@ -1066,7 +1066,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.OLU.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4ac5ca5a-00d2-4d98-b728-d96c07dddef8";
-				PROVISIONING_PROFILE_SPECIFIER = OLU_DIST;
+				PROVISIONING_PROFILE_SPECIFIER = OLUDevelopment;
 				SWIFT_OBJC_BRIDGING_HEADER = "OLU/OLU-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

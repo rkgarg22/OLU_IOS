@@ -6,9 +6,6 @@ import WebKit
 class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, paymentInitiateAlamofire, ProcessUrlAlamofire, WKUIDelegate, WKNavigationDelegate, paymentCollectAlamofire, DeleteCardAlamofire ,addPromoCodeAlamofire, MarkCardSelectedProtocol,CardListProtocol{
     
     
-    
-    
-    
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var cardTableView: UITableView!
     

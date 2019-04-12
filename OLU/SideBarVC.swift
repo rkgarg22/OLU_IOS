@@ -87,8 +87,8 @@ class SideBarVC: UIViewController ,isAvailableAlamofire ,logoutAlamoFire, profil
             case .denied:
                 print("Application Not Allowed to Display Notifications")
                 
-//            case .provisional:
-//                print("Application Not Allowed to Display Notifications")
+            case .provisional:
+              print("Application Not Allowed to Display Notifications")
             }
         }
     }
