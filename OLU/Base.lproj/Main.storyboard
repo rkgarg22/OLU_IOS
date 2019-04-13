@@ -5488,7 +5488,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlH-7d-FVj" customClass="UIViewCustomClass" customModule="OLU" customModuleProvider="target">
-                                        <rect key="frame" x="41.333333333333343" y="202.33333333333334" width="331.33333333333326" height="331.33333333333326"/>
+                                        <rect key="frame" x="41.333333333333343" y="195" width="331.33333333333326" height="346"/>
                                         <subviews>
                                             <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-67-Oce" userLabel="CrossBtn">
                                                 <rect key="frame" x="271.33333333333337" y="10" width="40" height="40"/>
@@ -5499,13 +5499,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kickboxing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X94-Bg-5Kg" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="59.999999999999972" width="100" height="30"/>
+                                                <rect key="frame" x="20" y="60" width="100" height="30"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgy-64-4hD">
-                                                <rect key="frame" x="130" y="73.666666666666657" width="10" height="3"/>
+                                                <rect key="frame" x="130" y="73.666666666666686" width="10" height="3"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="U8h-w1-6YA"/>
@@ -5516,55 +5516,55 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Diksha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rF-4s-cXi" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
-                                                <rect key="frame" x="150" y="59.999999999999979" width="49" height="27.333333333333336"/>
+                                                <rect key="frame" x="150" y="60.000000000000007" width="49" height="27.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-23-12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHy-gd-8Ky" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="99.999999999999972" width="86.333333333333329" height="27.333333333333329"/>
+                                                <rect key="frame" x="20" y="100" width="86.333333333333329" height="27.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10- 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-ba-bjQ" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="137.33333333333334" width="47" height="27.333333333333343"/>
+                                                <rect key="frame" x="20" y="137.33333333333331" width="47" height="27.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xyz strret , good city" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DK-ks-K6C" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="174.66666666666666" width="301.33333333333331" height="30"/>
+                                                <rect key="frame" x="20" y="174.66666666666669" width="301.33333333333331" height="30"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qks-g3-FE1" userLabel="AddressButton">
-                                                <rect key="frame" x="20" y="174.66666666666666" width="301.33333333333331" height="30"/>
+                                                <rect key="frame" x="20" y="174.66666666666669" width="301.33333333333331" height="30"/>
                                                 <connections>
                                                     <action selector="addressBtnClick:" destination="d1b-j7-1Ld" eventType="touchUpInside" id="CH7-DB-lrH"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de personas:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aie-mS-cfs" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="214.66666666666666" width="156" height="30"/>
+                                                <rect key="frame" x="20" y="214.66666666666669" width="156" height="30"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7F-oe-za5" customClass="UILabelCustomClass" customModule="OLU" customModuleProvider="target">
-                                                <rect key="frame" x="181" y="214.66666666666666" width="9.6666666666666572" height="27.333333333333343"/>
+                                                <rect key="frame" x="181" y="214.66666666666669" width="9.6666666666666572" height="27.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSa-Rj-4YX" userLabel="PersonClick">
-                                                <rect key="frame" x="20" y="214.66666666666666" width="170.66666666666666" height="30"/>
+                                                <rect key="frame" x="20" y="214.66666666666669" width="170.66666666666666" height="30"/>
                                                 <connections>
                                                     <action selector="numberOfPerson:" destination="d1b-j7-1Ld" eventType="touchUpInside" id="40h-eE-TdK"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gua-ts-Mdo" customClass="UIButtonCustomClass" customModule="OLU" customModuleProvider="target">
-                                                <rect key="frame" x="120.66666666666666" y="271.33333333333337" width="90" height="40"/>
+                                                <rect key="frame" x="120.66666666666666" y="296" width="90" height="40"/>
                                                 <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="0Iu-eF-erZ"/>
@@ -5599,7 +5599,7 @@
                                             <constraint firstItem="qks-g3-FE1" firstAttribute="trailing" secondItem="7DK-ks-K6C" secondAttribute="trailing" id="KpP-Ia-h0D"/>
                                             <constraint firstAttribute="trailing" secondItem="aS1-67-Oce" secondAttribute="trailing" constant="20" id="R9p-4W-Bzu"/>
                                             <constraint firstItem="qSa-Rj-4YX" firstAttribute="trailing" secondItem="y7F-oe-za5" secondAttribute="trailing" id="T5M-VB-sB7"/>
-                                            <constraint firstAttribute="bottom" secondItem="Gua-ts-Mdo" secondAttribute="bottom" constant="20" id="UXc-Ye-rsF"/>
+                                            <constraint firstAttribute="bottom" secondItem="Gua-ts-Mdo" secondAttribute="bottom" constant="10" id="UXc-Ye-rsF"/>
                                             <constraint firstItem="qSa-Rj-4YX" firstAttribute="top" secondItem="aie-mS-cfs" secondAttribute="top" id="VSb-dL-UYA"/>
                                             <constraint firstItem="aie-mS-cfs" firstAttribute="top" secondItem="7DK-ks-K6C" secondAttribute="bottom" constant="10" id="XYi-pN-IvT"/>
                                             <constraint firstItem="y7F-oe-za5" firstAttribute="leading" secondItem="aie-mS-cfs" secondAttribute="trailing" constant="5" id="fKO-6V-TFd"/>
@@ -5655,7 +5655,7 @@
                                     <constraint firstItem="TUO-ee-MbN" firstAttribute="leading" secondItem="lUT-hc-gRC" secondAttribute="leading" id="dly-uf-7P6"/>
                                     <constraint firstItem="tlH-7d-FVj" firstAttribute="centerX" secondItem="lUT-hc-gRC" secondAttribute="centerX" id="dpN-qk-guV"/>
                                     <constraint firstItem="TUO-ee-MbN" firstAttribute="top" secondItem="fOD-oP-bO2" secondAttribute="bottom" id="e1L-ut-kEg"/>
-                                    <constraint firstItem="tlH-7d-FVj" firstAttribute="height" secondItem="lUT-hc-gRC" secondAttribute="height" multiplier="0.45" id="gvB-2T-CBv"/>
+                                    <constraint firstItem="tlH-7d-FVj" firstAttribute="height" secondItem="lUT-hc-gRC" secondAttribute="height" multiplier="0.47" id="gvB-2T-CBv"/>
                                     <constraint firstItem="fOD-oP-bO2" firstAttribute="leading" secondItem="TUO-ee-MbN" secondAttribute="leading" id="q9u-5u-0Zl"/>
                                 </constraints>
                             </view>

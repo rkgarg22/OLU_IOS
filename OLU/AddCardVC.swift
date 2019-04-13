@@ -305,6 +305,7 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
     
     @IBAction func placeToPay(_ sender: Any) {
     }
+    
     func addPromoCodeResult(dictionaryContent: NSDictionary) {
         applicationDelegate.dismissProgressView(view: self.view)
         let success = dictionaryContent.value(forKey: "success") as AnyObject

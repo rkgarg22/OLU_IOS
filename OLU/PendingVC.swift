@@ -124,6 +124,7 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     
     @IBAction func gurdadBtnClick(_ sender: Any){
         if applicationDelegate.isConnectedToNetwork {
+             applicationDelegate.startProgressView(view: self.view)
             let bookingID = selectedDict.value(forKey: "bookingID") as? Int ?? 0
             AlamofireWrapper.sharedInstance.sessionUpdateProtocol = self
             AlamofireWrapper.sharedInstance.sessionUpdate(bookingID: String(bookingID), bookingType: selectBookingFor, latitude: selectedLatitude, longitude: selectedLongitude, address: selectedAddress)
@@ -133,6 +134,7 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     }
     
     func getData(dictionaryContent: NSDictionary) {
+        applicationDelegate.dismissProgressView(view: self.view)
         let suucess = dictionaryContent.value(forKey: "success") as AnyObject
         if suucess.isEqual(1){
             noOfPersonPickerView.isHidden = true
@@ -150,6 +152,8 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
         selectedAddress = address;
         selectedLatitude = latitude;
         selectedLongitude = longitude;
+        
+        addressLabel.text =  "\(directionText) \(selectedAddress)"
     }
     
     @IBAction func numberOfPerson(_ sender: Any) {

@@ -38,13 +38,14 @@ class MenuVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,getM
         super.viewDidLoad()
         picker.delegate = self
         startFunc()
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     //MARK:- FUNCTIONS
     //StartFunc
