@@ -78,8 +78,12 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
             isTrainer = true
             apiStatus = "0"
             pendingListApiHit(status: "0")
+            pendingBtn.setTitle("PENDIENTES", for: UIControlState.normal)
+            pendingBtn.setTitle("PENDIENTES", for: UIControlState.selected)
         }else{
             //totalHeight.constant = 0
+            pendingBtn.setTitle("AGENDADA", for: UIControlState.normal)
+            pendingBtn.setTitle("AGENDADA", for: UIControlState.selected)
             acceptedLbl.isHidden = false
             apiStatus = "3"
             pendingListApiHit(status: "3")

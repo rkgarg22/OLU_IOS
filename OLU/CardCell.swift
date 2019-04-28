@@ -12,6 +12,8 @@ class CardCell: UITableViewCell {
 
     @IBOutlet var cardLabel: UILabelCustomClass!
     @IBOutlet var selectedImageView : UIImageView!
+      @IBOutlet var deleteBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -246,6 +246,8 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
             cell.selectedImageView.image = image
         }
         
+        cell.deleteBtn.tag = indexPath.row
+        cell.deleteBtn.addTarget(self, action: #selector(deletdCardBtn), for: .touchUpInside)
         return cell
     }
     
@@ -260,11 +262,16 @@ class AddCardVC: UIViewController,UITableViewDelegate ,UITableViewDataSource, pa
         }
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            selectedIndex = indexPath.row
-            deleteCard();
-        }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            selectedIndex = indexPath.row
+//            deleteCard();
+//        }
+//    }
+    
+    @objc func deletdCardBtn(sender:UIButton) {
+        selectedIndex = sender.tag
+        deleteCard();
     }
     
     func showPromoCodePopUp(){

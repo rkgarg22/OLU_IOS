@@ -67,10 +67,10 @@ let enterDescription = "por favor ingrese la descripción"
 let selectForm = "seleccione al menos una categoría"
 let fifteenMinCheckAlert = "Por favor ingresa una hora mayor a los próximos 15 minutos"
 let comprarAlert = "¿Estas seguro y confirmas que deseas comprar el plan seleccionado?"
-let imageUpload = "Quieres actualizar tu perfil Imagen?"
+let imageUpload = "¿Quieres actualizar la imagen de tu perfil?"
 let selectLatLong = "Seleccione latitud y longitud"
 let nothingToUpdate = "Ahi esta. othing para actualizar"
-let NumberOfperson = "Número of Personas: "
+let NumberOfperson = "Número de Personas: "
 
 let directionText = "Dirección: "
 
@@ -152,7 +152,9 @@ let switchSelectedCardConfirmation = "La tarjeta de crédito seleccionada quedar
 
 let thereSpecialCharterThere = "Por favor verifica que tu nombre o apellido NO contengan caracteres especiales. Gracias"
 
+let userIntroPopup = "Vas a ingresar tus datos para ser parte de los usuarios de la aplicación. En tus manos tienes la posibilidad de escoger que actividad, cuando y el integrante del OLU Team que prefieras."
 
+let trainerIntroPopUp = "Vas a ingresar tus datos para prestar tus servicios a nuestros usuarios de la aplicacion en las diferentes actividades ofrecidas."
 //MARK: - Show alert
 // MARK: showAlert Function
 func showAlert (_ reference:UIViewController, message:String, title:String){
@@ -282,7 +284,7 @@ func getCatName(catID:Int)->String {
     case 5 :
         
         catName = "Pilates"
-     case 11 :
+    case 11 :
         
         catName = "Dance Fit"
     case 10 :

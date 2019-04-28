@@ -22,16 +22,14 @@ class EntryVC: UIViewController {
     }
 
     @IBAction func traineeButton(_ sender: Any) {
-       
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "LogInVc") as! LogInVC
-        navigationController?.pushViewController(myVC, animated: true)
+        showUserPopUp();
+        
     }
     
     //MARK:- UIButton
     //forgot password
     @IBAction func coachButton(_ sender: Any) {
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "TrainerLoginVc") as! TrainerLoginVC
-        navigationController?.pushViewController(myVC, animated: true)
+        showTrainerPopUp();
     }
     
     @IBAction func traineBtn(sender: UIButtonCustomClass){
@@ -42,7 +40,37 @@ class EntryVC: UIViewController {
         
     }
     
+    func showUserPopUp() {
+        let alertController = UIAlertController(title:userIntroPopup, message: "", preferredStyle: .alert)
+        // Create the actions
+        let YesAction = UIAlertAction(title:"Si", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInVc") as! LogInVC
+            self.navigationController?.pushViewController(myVC, animated: true)
+            
+        }
+        let NoAction = UIAlertAction(title: "No", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+        }
+        alertController.addAction(YesAction)
+        alertController.addAction(NoAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
-    
-
+    func showTrainerPopUp() {
+        let alertController = UIAlertController(title:trainerIntroPopUp, message: "", preferredStyle: .alert)
+        // Create the actions
+        let YesAction = UIAlertAction(title:"Si", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            let myVC = self.storyboard?.instantiateViewController(withIdentifier: "TrainerLoginVc") as! TrainerLoginVC
+            self.navigationController?.pushViewController(myVC, animated: true)
+            
+        }
+        let NoAction = UIAlertAction(title: "No", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+        }
+        alertController.addAction(YesAction)
+        alertController.addAction(NoAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
