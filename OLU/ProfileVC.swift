@@ -145,7 +145,7 @@ class ProfileVC: UIViewController  ,UIImagePickerControllerDelegate , UINavigati
             // let resultDict = dictionaryContent.value(forKey: "result") as! NSDictionary
             //let imageUrl = resultDict.value(forKey:"userImageUrl") as! String
             //UserDefaults.standard.set(imageUrl, forKey: USER_DEFAULT_ImageUrl_Key)
-            self.navigationController?.popViewController(animated: true)
+           // self.navigationController?.popViewController(animated: true)
         }
         else{
             applicationDelegate.dismissProgressView(view: self.view)
@@ -205,11 +205,12 @@ class ProfileVC: UIViewController  ,UIImagePickerControllerDelegate , UINavigati
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        isUpdated = true
+        //isUpdated = true
         chosenImage = (info[UIImagePickerControllerOriginalImage] as! UIImage)
         chosenImage = resizeImage(image: chosenImage!, targetSize:CGSize(width: 200.0, height: 200.0))
         profilePic.image = chosenImage
         dismiss(animated:true, completion: nil)
+        self.updateProfileApiHit()
     }
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {

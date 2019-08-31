@@ -101,20 +101,25 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     }
     
     @IBAction func pickerDoneBtnClick(_ sender: Any){
-        numberOfPersona.text = pickerData[selectedInValueFromPicker];
-        noOfPersonPickerView.isHidden = true
-        pickerDoneBtn.isHidden = true
-        
-        if (pickerData[selectedInValueFromPicker] == "1"){
-            selectBookingFor = "1"
-        }else if (pickerData[selectedInValueFromPicker] == "2"){
-            selectBookingFor = "2"
-        }else if (pickerData[selectedInValueFromPicker] == "3"){
-            selectBookingFor = "4"
-        }else if (pickerData[selectedInValueFromPicker] == "4"){
-            selectBookingFor = "5"
-        }else if (pickerData[selectedInValueFromPicker] == "Empresarial"){
-            selectBookingFor = "3"
+        if(selectedInValueFromPicker != -1){
+            numberOfPersona.text = pickerData[selectedInValueFromPicker];
+            noOfPersonPickerView.isHidden = true
+            pickerDoneBtn.isHidden = true
+            
+            if (pickerData[selectedInValueFromPicker] == "1"){
+                selectBookingFor = "1"
+            }else if (pickerData[selectedInValueFromPicker] == "2"){
+                selectBookingFor = "2"
+            }else if (pickerData[selectedInValueFromPicker] == "3"){
+                selectBookingFor = "4"
+            }else if (pickerData[selectedInValueFromPicker] == "4"){
+                selectBookingFor = "5"
+            }else if (pickerData[selectedInValueFromPicker] == "Empresarial"){
+                selectBookingFor = "3"
+            }
+        }else{
+            noOfPersonPickerView.isHidden = true
+            pickerDoneBtn.isHidden = true
         }
     }
     
@@ -128,7 +133,7 @@ class PendingVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,P
     
     @IBAction func gurdadBtnClick(_ sender: Any){
         if applicationDelegate.isConnectedToNetwork {
-             applicationDelegate.startProgressView(view: self.view)
+            applicationDelegate.startProgressView(view: self.view)
             let bookingID = selectedDict.value(forKey: "bookingID") as? Int ?? 0
             AlamofireWrapper.sharedInstance.sessionUpdateProtocol = self
             AlamofireWrapper.sharedInstance.sessionUpdate(bookingID: String(bookingID), bookingType: selectBookingFor, latitude: selectedLatitude, longitude: selectedLongitude, address: selectedAddress)

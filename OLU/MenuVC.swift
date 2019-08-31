@@ -9,7 +9,7 @@
 import UIKit
 
 
-class MenuVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,getMyProfileAlamofire ,UIImagePickerControllerDelegate , UINavigationControllerDelegate ,editProfileAlamofire  ,addPromoCodeAlamofire{
+class MenuVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,getMyProfileAlamofire ,UIImagePickerControllerDelegate , UINavigationControllerDelegate ,editProfileAlamofire  ,addPromoCodeAlamofire,UITextViewDelegate{
     
     
     @IBOutlet var walletMoney: UILabelCustomClass!
@@ -51,6 +51,9 @@ class MenuVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,getM
     //StartFunc
     func startFunc(){
         getMyProfileApiHit()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(MenuVC.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(MenuVC.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -393,15 +396,37 @@ class MenuVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,getM
         let nibMainview = nibContentsUser![0] as! UIView
         let okBtn = (nibMainview.viewWithTag(3)! as! UIButton)
         let crossBtn = (nibMainview.viewWithTag(15)! as! UIButton)
-//        let promoText = (nibMainview.viewWithTag(20)! as! UITextField)
+        let promoText = (nibMainview.viewWithTag(20)! as! UITextField)
+        promoText.text = "";
+        promoCodeText = promoText
+        //promoCodeText.delegate = (self as! UITextFieldDelegate);
         okBtn.addTarget(self, action: #selector(okBtnAction), for: UIControlEvents.touchUpInside)
-//        promoCode = promoText.text!
+        //        promoCode = promoText.text!
         crossBtn.addTarget(self, action: #selector(crossBtnAction), for: UIControlEvents.touchUpInside)
         
         self.view.addSubview(nibMainview)
         
         nibMainview.frame.size = CGSize(width: (self.view.frame.width), height: (self.view.frame.height))
-        nibMainview.center = (self.view.center)
+        nibMainview.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+    }
+
+    @objc func keyboardWillShow(_ sender: Notification) {
+        let nibMainview = nibContentsUser![0] as! UIView
+        let info: NSDictionary = sender.userInfo! as NSDictionary
+        let value: NSValue = info.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardSize: CGSize = value.cgRectValue.size
+       // let keyBoardHeight = keyboardSize.height
+        nibMainview.center = CGPoint(x: self.view.center.x, y: self.view.center.y-120)
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+         let nibMainview = nibContentsUser![0] as! UIView
+        nibMainview.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
     }
     
     @objc func okBtnAction(sender:UIButton) {
@@ -421,8 +446,8 @@ class MenuVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,getM
             else{
                 showAlert(self, message: noInternetConnection, title: appName)
             }
-       }
-            }
+        }
+    }
     
     func addPromoCodeResult(dictionaryContent: NSDictionary) {
         applicationDelegate.dismissProgressView(view: self.view)
@@ -432,7 +457,7 @@ class MenuVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,getM
             nibMainview.removeFromSuperview()
         }
         else {
-             let error = dictionaryContent.value(forKey: "error") as! String
+            let error = dictionaryContent.value(forKey: "error") as! String
             let alertController = UIAlertController(title:error, message: "", preferredStyle: .alert)
             // Create the actions
             let YesAction = UIAlertAction(title:"Ok", style: UIAlertActionStyle.default) {
@@ -448,11 +473,11 @@ class MenuVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource ,getM
             alertController.addAction(YesAction)
             alertController.addAction(NoAction)
             self.present(alertController, animated: true, completion: nil)
-
+            
             showAlert(self, message: error, title: appName)
         }
     }
-
+    
     @objc func crossBtnAction(sender:UIButton) {
         let nibMainview = nibContentsUser![0] as! UIView
         nibMainview.removeFromSuperview()
