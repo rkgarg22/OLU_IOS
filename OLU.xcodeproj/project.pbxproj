@@ -523,7 +523,7 @@
 				7B3DCE6E205E508D00FB35E8 /* Frameworks */,
 				7B3DCE6F205E508D00FB35E8 /* Resources */,
 				5D5B5A5271F1F9680209CF64 /* [CP] Embed Pods Frameworks */,
-				5CB4EC0E9408152C309F2B01 /* [CP] Copy Pods Resources */,
+				41B4AF4F50FD426D053B92A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -688,7 +688,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5CB4EC0E9408152C309F2B01 /* [CP] Copy Pods Resources */ = {
+		41B4AF4F50FD426D053B92A9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1036,10 +1036,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7Z5AQZ8848;
 				INFOPLIST_FILE = OLU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.OLU.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4ac5ca5a-00d2-4d98-b728-d96c07dddef8";
@@ -1061,9 +1063,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mauricio Villegas (7Z5AQZ8848)";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = 7Z5AQZ8848;
 				INFOPLIST_FILE = OLU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.OLU.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4ac5ca5a-00d2-4d98-b728-d96c07dddef8";

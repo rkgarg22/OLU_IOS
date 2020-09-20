@@ -28,7 +28,7 @@ class TermsConditionVC: UIViewController, UIWebViewDelegate {
             titleLabelOne.text = "TÉRMINOS"
             titlelabeltwo.text = "Y CONDICIONES"
             if UserDefaults.standard.value(forKey: USER_DEFAULT_USERTYPE) as? String == "user"{
-                let url =  URL(string: "http://3.16.104.146/api/pages/?userID=62&pageID=28&language=es&lang=es")
+                let url =  URL(string: "http://3.16.104r.146/api/pages/?userID=62&pageID=28&language=es&lang=es")
                 let myRequest = URLRequest(url: url!)
                 webView.loadRequest(myRequest)
             }else{

@@ -35,6 +35,7 @@ class HomeVC: UIViewController ,logoutAlamoFire ,MFMailComposeViewControllerDele
         super.viewDidLoad()
         determineMyCurrentLocation()
         applicationDelegate.googleAnalytics(messgae: "Applicaiton Start")
+        covidAlert();
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -249,5 +250,24 @@ class HomeVC: UIViewController ,logoutAlamoFire ,MFMailComposeViewControllerDele
     @IBAction func settingActionThree(_ sender: UIButtonCustomClass){
         let myVC = storyboard?.instantiateViewController(withIdentifier: "CondtionsPolicyEntryVC") as! CondtionsPolicyEntryVC
         navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+    func covidAlert() {
+        let alertController = UIAlertController(title:"Ayúdanos a cuidarnos. Conoce nuestro protocolo de bioseguridad.", message: "", preferredStyle: .alert)
+        // Create the actions
+        let YesAction = UIAlertAction(title:"ACEPTO", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            
+            
+        }
+        let NoAction = UIAlertAction(title: "VER MÁS", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            let itunesUrl = URL(string: "http://oluapp.com/protocolo-bioseguridad-covid-19/")
+            UIApplication.shared.open(itunesUrl!, options: [:], completionHandler: nil)
+        }
+        
+        alertController.addAction(YesAction)
+        alertController.addAction(NoAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

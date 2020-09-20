@@ -176,11 +176,11 @@ Copyright 2018 Google
 
 ## GoogleMaps
 
-Copyright 2018 Google
+Copyright 2020 Google
 
 ## GooglePlaces
 
-Copyright 2018 Google
+Copyright 2020 Google
 
 ## GoogleToolboxForMac
 
